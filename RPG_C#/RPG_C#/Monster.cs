@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG_C_
 {
-    internal class Heros
+    internal class Monster
     {
         private int CurrentHp;
         private int MaxHp;
@@ -14,7 +14,7 @@ namespace RPG_C_
         private int MaxDefense;
         private int CurrentDefense;
 
-        public Heros(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense)
+        public Monster(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense)
         {
             this.CurrentHp = CurrentHp;
             this.MaxHp = MaxHp;
@@ -43,7 +43,6 @@ namespace RPG_C_
         {
             return this.MaxDefense;
         }
-        
 
         public void SetCurrentHp(int CurrentHp)
         {
@@ -66,10 +65,14 @@ namespace RPG_C_
             this.MaxDefense = MaxDefense;
         }
 
-        //Méthodes
-        //public void attaquer(heros h)
-        //{
-
-        // }
+        public void AttackHero(Heros hero)
+        {
+            int damage = this.Attack - hero.GetCurrentDefense();
+            if (damage < 0)
+            {
+                damage = 0;
+            }
+            hero.SetCurrentHp(hero.GetCurrentHp() - damage);
+        }
     }
 }
