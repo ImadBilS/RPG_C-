@@ -67,9 +67,30 @@ namespace RPG_C_
         }
 
         //Méthodes
-        //public void attaquer(heros h)
-        //{
+        public void attackAMonster(Monster monster)
+        {
+            int damage = this.Attack - monster.GetCurrentDefense();
+            
+            if (monster.GetCurrentHp() - this.Attack > 0)
+            {
+                monster.SetCurrentHp(monster.GetCurrentHp() - damage);
+            }
+            else
+            {
+                monster.SetCurrentHp(0);
+            }
+        }
 
-        // }
+        public void heal()
+        {
+            if (this.CurrentHp + 10 < this.MaxHp)
+            {
+                this.CurrentHp += 10;
+            }
+            else
+            {
+                this.CurrentHp = this.MaxHp;
+            }
+        }
     }
 }

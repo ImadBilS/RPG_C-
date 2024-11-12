@@ -65,14 +65,30 @@ namespace RPG_C_
             this.MaxDefense = MaxDefense;
         }
 
-        public void AttackHero(Heros hero)
+        public void attackHero(Heros hero)
         {
             int damage = this.Attack - hero.GetCurrentDefense();
-            if (damage < 0)
+
+            if (hero.GetCurrentHp() - this.Attack > 0)
             {
-                damage = 0;
+                hero.SetCurrentHp(hero.GetCurrentHp() - damage);
             }
-            hero.SetCurrentHp(hero.GetCurrentHp() - damage);
+            else
+            {
+                hero.SetCurrentHp(0);
+            }
+        }
+
+        public void heal()
+        {
+            if (this.CurrentHp + 10 < this.MaxHp)
+            {
+                this.CurrentHp += 10;
+            }
+            else
+            {
+                this.CurrentHp = this.MaxHp;
+            }
         }
     }
 }
