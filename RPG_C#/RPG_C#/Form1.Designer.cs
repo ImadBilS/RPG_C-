@@ -38,6 +38,10 @@
             lblMonsterCurrentPv = new Label();
             lblMonsterMaxDefense = new Label();
             lblMonsterPvMax = new Label();
+            btnMonsterAttack = new Button();
+            btnHeroAttack = new Button();
+            btnHealHero = new Button();
+            btnHealMonster = new Button();
             SuspendLayout();
             // 
             // lblHeroPvMax
@@ -130,11 +134,58 @@
             lblMonsterPvMax.TabIndex = 10;
             lblMonsterPvMax.Text = "MonsterPvMax";
             // 
+            // btnMonsterAttack
+            // 
+            btnMonsterAttack.AutoSize = true;
+            btnMonsterAttack.Location = new Point(384, 223);
+            btnMonsterAttack.Name = "btnMonsterAttack";
+            btnMonsterAttack.Size = new Size(94, 30);
+            btnMonsterAttack.TabIndex = 15;
+            btnMonsterAttack.Text = "Attack";
+            btnMonsterAttack.UseVisualStyleBackColor = true;
+            btnMonsterAttack.Click += btnMonsterAttack_Click;
+            // 
+            // btnHeroAttack
+            // 
+            btnHeroAttack.AutoSize = true;
+            btnHeroAttack.Location = new Point(109, 223);
+            btnHeroAttack.Name = "btnHeroAttack";
+            btnHeroAttack.Size = new Size(94, 30);
+            btnHeroAttack.TabIndex = 16;
+            btnHeroAttack.Text = "Attack";
+            btnHeroAttack.UseVisualStyleBackColor = true;
+            btnHeroAttack.Click += btnHeroAttack_Click;
+            // 
+            // btnHealHero
+            // 
+            btnHealHero.AutoSize = true;
+            btnHealHero.Location = new Point(109, 269);
+            btnHealHero.Name = "btnHealHero";
+            btnHealHero.Size = new Size(94, 30);
+            btnHealHero.TabIndex = 17;
+            btnHealHero.Text = "Heal";
+            btnHealHero.UseVisualStyleBackColor = true;
+            btnHealHero.Click += btnHealHero_Click;
+            // 
+            // btnHealMonster
+            // 
+            btnHealMonster.AutoSize = true;
+            btnHealMonster.Location = new Point(384, 269);
+            btnHealMonster.Name = "btnHealMonster";
+            btnHealMonster.Size = new Size(94, 30);
+            btnHealMonster.TabIndex = 18;
+            btnHealMonster.Text = "Heal";
+            btnHealMonster.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnHealMonster);
+            Controls.Add(btnHealHero);
+            Controls.Add(btnHeroAttack);
+            Controls.Add(btnMonsterAttack);
             Controls.Add(lblMonsterAttack);
             Controls.Add(lblMonsterDefense);
             Controls.Add(lblMonsterCurrentPv);
@@ -164,5 +215,9 @@
         private Label lblMonsterCurrentPv;
         private Label lblMonsterMaxDefense;
         private Label lblMonsterPvMax;
+        private Button btnMonsterAttack;
+        private Button btnHeroAttack;
+        private Button btnHealHero;
+        private Button btnHealMonster;
     }
 }
