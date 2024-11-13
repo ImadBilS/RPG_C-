@@ -9,11 +9,12 @@ namespace RPG_C_
 {
     internal class Personnage
     {
-        public int CurrentHp;
-        public int MaxHp;
-        public int AttackPower;
-        public int MaxDefense;
-        public int CurrentDefense;
+        private int CurrentHp;
+        private int MaxHp;
+        private int AttackPower;
+        private int MaxDefense;
+        private int CurrentDefense;
+        private bool isDead;
 
         public Personnage(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense)
         {
@@ -22,6 +23,7 @@ namespace RPG_C_
             this.AttackPower = Attack;
             this.MaxDefense = MaxDefense;
             this.CurrentDefense = CurrentDefense;
+            this.isDead = false;
         }
 
         //GETTERS
@@ -45,6 +47,10 @@ namespace RPG_C_
         {
             return this.MaxDefense;
         }
+        public bool GetIsDead()
+        {
+            return this.isDead;
+        }
 
         //SETTERS
         public void SetCurrentHp(int CurrentHp)
@@ -67,6 +73,14 @@ namespace RPG_C_
         {
             this.MaxDefense = MaxDefense;
         }
+        public bool hasDied()
+        {
+            if (this.CurrentHp <= 0)
+            {
+                this.isDead = true;
+            }
+            return this.isDead;
+        }
     }
 
     class Player : Personnage
@@ -75,15 +89,10 @@ namespace RPG_C_
 
         public Player(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense, int nbLifePotion) : base(CurrentHp, MaxHp, Attack, MaxDefense, CurrentDefense)
         {
-            this.CurrentHp = CurrentHp;
-            this.MaxHp = MaxHp;
-            this.AttackPower = Attack;
-            this.MaxDefense = MaxDefense;
-            this.CurrentDefense = CurrentDefense;
             this.nbLifePotion = nbLifePotion;
         }
 
-        public void getNbLifePotion()
+        public int getNbLifePotion()
         {
             return this.nbLifePotion;
         }
@@ -96,8 +105,8 @@ namespace RPG_C_
 
         public void attackEnnemy(Ennemy ennemy)
         {
-            int damage = this.AttackPower - ennemy.GetCurrentDefense();
-            if (ennemy.GetCurrentHp() - this.AttackPower > 0)
+            int damage = this.GetAttackPower() - ennemy.GetCurrentDefense();
+            if (ennemy.GetCurrentHp() - this.GetAttackPower() > 0)
             {
                 ennemy.SetCurrentHp(ennemy.GetCurrentHp() - damage);
             }
@@ -121,17 +130,13 @@ namespace RPG_C_
     {
         public Ennemy(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense) : base(CurrentHp, MaxHp, Attack, MaxDefense, CurrentDefense)
         {
-            this.CurrentHp = CurrentHp;
-            this.MaxHp = MaxHp;
-            this.AttackPower = Attack;
-            this.MaxDefense = MaxDefense;
-            this.CurrentDefense = CurrentDefense;
+
         }
 
         public void attackPlayer(Player player)
         {
-            int damage = this.AttackPower - player.GetCurrentDefense();
-            if (player.GetCurrentHp() - this.AttackPower > 0)
+            int damage = this.GetAttackPower() - player.GetCurrentDefense();
+            if (player.GetCurrentHp() - this.GetAttackPower() > 0)
             {
                 player.SetCurrentHp(player.GetCurrentHp() - damage);
             }
