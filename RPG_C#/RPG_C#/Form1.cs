@@ -5,66 +5,94 @@ namespace RPG_C_
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
 
-            lblHeroPvMax.Text += " : " + Global.heros.GetMaxHp();
-            lblHeroCurrentPv.Text += " : " + Global.heros.GetCurrentHp();
-            lblHeroMaxDefense.Text += " : " + Global.heros.GetMaxDefense();
-            lblHeroDefense.Text += " : " + Global.heros.GetCurrentDefense();
-            lblHeroAttack.Text += " : " + Global.heros.GetAttack();
+            lblPlayerPvMax.Text += " : " + Global.player.GetMaxHp();
+            lblPlayerCurrentPv.Text += " : " + Global.player.GetCurrentHp();
+            lblPlayerMaxDefense.Text += " : " + Global.player.GetMaxDefense();
+            lblPlayerDefense.Text += " : " + Global.player.GetCurrentDefense();
+            lblPlayerAttack.Text += " : " + Global.player.GetAttackPower();
 
-            lblMonsterPvMax.Text += " : " + Global.monster.GetMaxHp();
-            lblMonsterCurrentPv.Text += " : " + Global.monster.GetCurrentHp();
-            lblMonsterMaxDefense.Text += " : " + Global.monster.GetMaxDefense();
-            lblMonsterDefense.Text += " : " + Global.monster.GetCurrentDefense();
-            lblMonsterAttack.Text += " : " + Global.monster.GetAttack();
+            lblEnnemyPvMax.Text += " : " + Global.ennemy.GetMaxHp();
+            lblEnnemyCurrentPv.Text += " : " + Global.ennemy.GetCurrentHp();
+            lblEnnemyMaxDefense.Text += " : " + Global.ennemy.GetMaxDefense();
+            lblEnnemyDefense.Text += " : " + Global.ennemy.GetCurrentDefense();
+            lblEnnemyAttack.Text += " : " + Global.ennemy.GetAttackPower();
+
 
 
         }
 
-        private void btnMonsterAttack_Click(object sender, EventArgs e)
+        private void btnPlayerAttack_Click_1(object sender, EventArgs e)
         {
-            Global.monster.attackHero(Global.heros);
+            Global.player.attackEnnemy(Global.ennemy);
 
-            lblHeroPvMax.Text = "HeroPvMax : " + Global.heros.GetMaxHp();
-            lblHeroCurrentPv.Text = "HeroCurrentPv : " + Global.heros.GetCurrentHp();
-            lblHeroMaxDefense.Text = "HeroMaxDefense : " + Global.heros.GetMaxDefense();
-            lblHeroDefense.Text = "HeroDefense : " + Global.heros.GetCurrentDefense();
-            lblHeroAttack.Text = "HeroAttack : " + Global.heros.GetAttack();
+            lblPlayerPvMax.Text = "PlayerPvMax : " + Global.player.GetMaxHp();
+            lblPlayerCurrentPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
+            lblPlayerMaxDefense.Text = "PlayerMaxDefense : " + Global.player.GetMaxDefense();
+            lblPlayerDefense.Text = "PlayerDefense : " + Global.player.GetCurrentDefense();
+            lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
 
 
-            lblMonsterPvMax.Text = "MonsterPvMax : " + Global.monster.GetMaxHp();
-            lblMonsterCurrentPv.Text = "MonsterCurrentPv : " + Global.monster.GetCurrentHp();
-            lblMonsterMaxDefense.Text = "MonsterMaxDefense : " + Global.monster.GetMaxDefense();
-            lblMonsterDefense.Text = "MonsterDefense : " + Global.monster.GetCurrentDefense();
-            lblMonsterAttack.Text = "MonsterAttack : " + Global.monster.GetAttack();
+            lblEnnemyPvMax.Text = "EnnemyPvMax : " + Global.ennemy.GetMaxHp();
+            lblEnnemyCurrentPv.Text = "EnnemyCurrentPv : " + Global.ennemy.GetCurrentHp();
+            lblEnnemyMaxDefense.Text = "EnnemyMaxDefense : " + Global.ennemy.GetMaxDefense();
+            lblEnnemyDefense.Text = "EnnemyDefense : " + Global.ennemy.GetCurrentDefense();
+            lblEnnemyAttack.Text = "EnnemyAttack : " + Global.ennemy.GetAttackPower();
+
+            if (Global.ennemy.hasDied())
+            {
+                MessageBox.Show("You win");
+            }
         }
 
-        private void btnHeroAttack_Click(object sender, EventArgs e)
+        private void btnEnnemyAttack_Click_1(object sender, EventArgs e)
         {
-            Global.heros.attackAMonster(Global.monster);
+            Global.ennemy.attackPlayer(Global.player);
 
-            lblHeroPvMax.Text = "HeroPvMax : " + Global.heros.GetMaxHp();
-            lblHeroCurrentPv.Text = "HeroCurrentPv : " + Global.heros.GetCurrentHp();
-            lblHeroMaxDefense.Text = "HeroMaxDefense : " + Global.heros.GetMaxDefense();
-            lblHeroDefense.Text = "HeroDefense : " + Global.heros.GetCurrentDefense();
-            lblHeroAttack.Text = "HeroAttack : " + Global.heros.GetAttack();
+            lblPlayerPvMax.Text = "PlayerPvMax : " + Global.player.GetMaxHp();
+            lblPlayerCurrentPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
+            lblPlayerMaxDefense.Text = "PlayerMaxDefense : " + Global.player.GetMaxDefense();
+            lblPlayerDefense.Text = "PlayerDefense : " + Global.player.GetCurrentDefense();
+            lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
 
 
-            lblMonsterPvMax.Text = "MonsterPvMax : " + Global.monster.GetMaxHp();
-            lblMonsterCurrentPv.Text = "MonsterCurrentPv : " + Global.monster.GetCurrentHp();
-            lblMonsterMaxDefense.Text = "MonsterMaxDefense : " + Global.monster.GetMaxDefense();
-            lblMonsterDefense.Text = "MonsterDefense : " + Global.monster.GetCurrentDefense();
-            lblMonsterAttack.Text = "MonsterAttack : " + Global.monster.GetAttack();
+            lblEnnemyPvMax.Text = "EnnemyPvMax : " + Global.ennemy.GetMaxHp();
+            lblEnnemyCurrentPv.Text = "EnnemyCurrentPv : " + Global.ennemy.GetCurrentHp();
+            lblEnnemyMaxDefense.Text = "EnnemyMaxDefense : " + Global.ennemy.GetMaxDefense();
+            lblEnnemyDefense.Text = "EnnemyDefense : " + Global.ennemy.GetCurrentDefense();
+            lblEnnemyAttack.Text = "EnnemyAttack : " + Global.ennemy.GetAttackPower();
+            /*
+            if (Global.player.GetCurrentHp() <= 0)
+            {
+                MessageBox.Show("You lose");
+            }
+            else if (Global.ennemy.GetCurrentHp() <= 0)
+            {
+                MessageBox.Show("You win");
+            }
+            */
+            if (Global.player.hasDied())
+            {
+                MessageBox.Show("You lose");
+            }
+
         }
 
-        private void btnHealHero_Click(object sender, EventArgs e)
+        private void btnHealPlayer_Click(object sender, EventArgs e)
         {
-
+            Global.player.heal();
+            lblPlayerCurrentPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
+            if (Global.player.getNbLifePotion() == 0)
+            {
+                btnHealPlayer.Enabled = false;
+                MessageBox.Show("You don't have any more life potion");
+            }
         }
     }
 }

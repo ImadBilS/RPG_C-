@@ -28,174 +28,174 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblHeroPvMax = new Label();
-            lblHeroMaxDefense = new Label();
-            lblHeroCurrentPv = new Label();
-            lblHeroDefense = new Label();
-            lblHeroAttack = new Label();
-            lblMonsterAttack = new Label();
-            lblMonsterDefense = new Label();
-            lblMonsterCurrentPv = new Label();
-            lblMonsterMaxDefense = new Label();
-            lblMonsterPvMax = new Label();
-            btnMonsterAttack = new Button();
-            btnHeroAttack = new Button();
-            btnHealHero = new Button();
-            btnHealMonster = new Button();
+            lblPlayerPvMax = new Label();
+            lblPlayerMaxDefense = new Label();
+            lblPlayerCurrentPv = new Label();
+            lblPlayerDefense = new Label();
+            lblPlayerAttack = new Label();
+            lblEnnemyAttack = new Label();
+            lblEnnemyDefense = new Label();
+            lblEnnemyCurrentPv = new Label();
+            lblEnnemyMaxDefense = new Label();
+            lblEnnemyPvMax = new Label();
+            btnEnnemyAttack = new Button();
+            btnPlayerAttack = new Button();
+            btnHealPlayer = new Button();
+            btnHealEnnemy = new Button();
             SuspendLayout();
             // 
-            // lblHeroPvMax
+            // lblPlayerPvMax
             // 
-            lblHeroPvMax.AutoSize = true;
-            lblHeroPvMax.Location = new Point(109, 45);
-            lblHeroPvMax.Name = "lblHeroPvMax";
-            lblHeroPvMax.Size = new Size(85, 20);
-            lblHeroPvMax.TabIndex = 0;
-            lblHeroPvMax.Text = "HeroPvMax";
+            lblPlayerPvMax.AutoSize = true;
+            lblPlayerPvMax.Location = new Point(109, 45);
+            lblPlayerPvMax.Name = "lblPlayerPvMax";
+            lblPlayerPvMax.Size = new Size(92, 20);
+            lblPlayerPvMax.TabIndex = 0;
+            lblPlayerPvMax.Text = "PlayerPvMax";
             // 
-            // lblHeroMaxDefense
+            // lblPlayerMaxDefense
             // 
-            lblHeroMaxDefense.AutoSize = true;
-            lblHeroMaxDefense.Location = new Point(109, 108);
-            lblHeroMaxDefense.Name = "lblHeroMaxDefense";
-            lblHeroMaxDefense.Size = new Size(124, 20);
-            lblHeroMaxDefense.TabIndex = 1;
-            lblHeroMaxDefense.Text = "HeroMaxDefense";
+            lblPlayerMaxDefense.AutoSize = true;
+            lblPlayerMaxDefense.Location = new Point(109, 108);
+            lblPlayerMaxDefense.Name = "lblPlayerMaxDefense";
+            lblPlayerMaxDefense.Size = new Size(131, 20);
+            lblPlayerMaxDefense.TabIndex = 1;
+            lblPlayerMaxDefense.Text = "PlayerMaxDefense";
             // 
-            // lblHeroCurrentPv
+            // lblPlayerCurrentPv
             // 
-            lblHeroCurrentPv.AutoSize = true;
-            lblHeroCurrentPv.Location = new Point(109, 76);
-            lblHeroCurrentPv.Name = "lblHeroCurrentPv";
-            lblHeroCurrentPv.Size = new Size(105, 20);
-            lblHeroCurrentPv.TabIndex = 2;
-            lblHeroCurrentPv.Text = "HeroCurrentPv";
+            lblPlayerCurrentPv.AutoSize = true;
+            lblPlayerCurrentPv.Location = new Point(109, 76);
+            lblPlayerCurrentPv.Name = "lblPlayerCurrentPv";
+            lblPlayerCurrentPv.Size = new Size(112, 20);
+            lblPlayerCurrentPv.TabIndex = 2;
+            lblPlayerCurrentPv.Text = "PlayerCurrentPv";
             // 
-            // lblHeroDefense
+            // lblPlayerDefense
             // 
-            lblHeroDefense.AutoSize = true;
-            lblHeroDefense.Location = new Point(109, 138);
-            lblHeroDefense.Name = "lblHeroDefense";
-            lblHeroDefense.Size = new Size(96, 20);
-            lblHeroDefense.TabIndex = 3;
-            lblHeroDefense.Text = "HeroDefense";
+            lblPlayerDefense.AutoSize = true;
+            lblPlayerDefense.Location = new Point(109, 138);
+            lblPlayerDefense.Name = "lblPlayerDefense";
+            lblPlayerDefense.Size = new Size(103, 20);
+            lblPlayerDefense.TabIndex = 3;
+            lblPlayerDefense.Text = "PlayerDefense";
             // 
-            // lblHeroAttack
+            // lblPlayerAttack
             // 
-            lblHeroAttack.AutoSize = true;
-            lblHeroAttack.Location = new Point(109, 171);
-            lblHeroAttack.Name = "lblHeroAttack";
-            lblHeroAttack.Size = new Size(84, 20);
-            lblHeroAttack.TabIndex = 4;
-            lblHeroAttack.Text = "HeroAttack";
+            lblPlayerAttack.AutoSize = true;
+            lblPlayerAttack.Location = new Point(109, 171);
+            lblPlayerAttack.Name = "lblPlayerAttack";
+            lblPlayerAttack.Size = new Size(91, 20);
+            lblPlayerAttack.TabIndex = 4;
+            lblPlayerAttack.Text = "PlayerAttack";
             // 
-            // lblMonsterAttack
+            // lblEnnemyAttack
             // 
-            lblMonsterAttack.AutoSize = true;
-            lblMonsterAttack.Location = new Point(384, 171);
-            lblMonsterAttack.Name = "lblMonsterAttack";
-            lblMonsterAttack.Size = new Size(105, 20);
-            lblMonsterAttack.TabIndex = 14;
-            lblMonsterAttack.Text = "MonsterAttack";
+            lblEnnemyAttack.AutoSize = true;
+            lblEnnemyAttack.Location = new Point(384, 171);
+            lblEnnemyAttack.Name = "lblEnnemyAttack";
+            lblEnnemyAttack.Size = new Size(103, 20);
+            lblEnnemyAttack.TabIndex = 14;
+            lblEnnemyAttack.Text = "EnnemyAttack";
             // 
-            // lblMonsterDefense
+            // lblEnnemyDefense
             // 
-            lblMonsterDefense.AutoSize = true;
-            lblMonsterDefense.Location = new Point(384, 138);
-            lblMonsterDefense.Name = "lblMonsterDefense";
-            lblMonsterDefense.Size = new Size(117, 20);
-            lblMonsterDefense.TabIndex = 13;
-            lblMonsterDefense.Text = "MonsterDefense";
+            lblEnnemyDefense.AutoSize = true;
+            lblEnnemyDefense.Location = new Point(384, 138);
+            lblEnnemyDefense.Name = "lblEnnemyDefense";
+            lblEnnemyDefense.Size = new Size(115, 20);
+            lblEnnemyDefense.TabIndex = 13;
+            lblEnnemyDefense.Text = "EnnemyDefense";
             // 
-            // lblMonsterCurrentPv
+            // lblEnnemyCurrentPv
             // 
-            lblMonsterCurrentPv.AutoSize = true;
-            lblMonsterCurrentPv.Location = new Point(384, 76);
-            lblMonsterCurrentPv.Name = "lblMonsterCurrentPv";
-            lblMonsterCurrentPv.Size = new Size(126, 20);
-            lblMonsterCurrentPv.TabIndex = 12;
-            lblMonsterCurrentPv.Text = "MonsterCurrentPv";
+            lblEnnemyCurrentPv.AutoSize = true;
+            lblEnnemyCurrentPv.Location = new Point(384, 76);
+            lblEnnemyCurrentPv.Name = "lblEnnemyCurrentPv";
+            lblEnnemyCurrentPv.Size = new Size(124, 20);
+            lblEnnemyCurrentPv.TabIndex = 12;
+            lblEnnemyCurrentPv.Text = "EnnemyCurrentPv";
             // 
-            // lblMonsterMaxDefense
+            // lblEnnemyMaxDefense
             // 
-            lblMonsterMaxDefense.AutoSize = true;
-            lblMonsterMaxDefense.Location = new Point(384, 108);
-            lblMonsterMaxDefense.Name = "lblMonsterMaxDefense";
-            lblMonsterMaxDefense.Size = new Size(145, 20);
-            lblMonsterMaxDefense.TabIndex = 11;
-            lblMonsterMaxDefense.Text = "MonsterMaxDefense";
+            lblEnnemyMaxDefense.AutoSize = true;
+            lblEnnemyMaxDefense.Location = new Point(384, 108);
+            lblEnnemyMaxDefense.Name = "lblEnnemyMaxDefense";
+            lblEnnemyMaxDefense.Size = new Size(143, 20);
+            lblEnnemyMaxDefense.TabIndex = 11;
+            lblEnnemyMaxDefense.Text = "EnnemyMaxDefense";
             // 
-            // lblMonsterPvMax
+            // lblEnnemyPvMax
             // 
-            lblMonsterPvMax.AutoSize = true;
-            lblMonsterPvMax.Location = new Point(384, 45);
-            lblMonsterPvMax.Name = "lblMonsterPvMax";
-            lblMonsterPvMax.Size = new Size(106, 20);
-            lblMonsterPvMax.TabIndex = 10;
-            lblMonsterPvMax.Text = "MonsterPvMax";
+            lblEnnemyPvMax.AutoSize = true;
+            lblEnnemyPvMax.Location = new Point(384, 45);
+            lblEnnemyPvMax.Name = "lblEnnemyPvMax";
+            lblEnnemyPvMax.Size = new Size(104, 20);
+            lblEnnemyPvMax.TabIndex = 10;
+            lblEnnemyPvMax.Text = "EnnemyPvMax";
             // 
-            // btnMonsterAttack
+            // btnEnnemyAttack
             // 
-            btnMonsterAttack.AutoSize = true;
-            btnMonsterAttack.Location = new Point(384, 223);
-            btnMonsterAttack.Name = "btnMonsterAttack";
-            btnMonsterAttack.Size = new Size(94, 30);
-            btnMonsterAttack.TabIndex = 15;
-            btnMonsterAttack.Text = "Attack";
-            btnMonsterAttack.UseVisualStyleBackColor = true;
-            btnMonsterAttack.Click += btnMonsterAttack_Click;
+            btnEnnemyAttack.AutoSize = true;
+            btnEnnemyAttack.Location = new Point(384, 223);
+            btnEnnemyAttack.Name = "btnEnnemyAttack";
+            btnEnnemyAttack.Size = new Size(94, 30);
+            btnEnnemyAttack.TabIndex = 15;
+            btnEnnemyAttack.Text = "Attack";
+            btnEnnemyAttack.UseVisualStyleBackColor = true;
+            btnEnnemyAttack.Click += btnEnnemyAttack_Click_1;
             // 
-            // btnHeroAttack
+            // btnPlayerAttack
             // 
-            btnHeroAttack.AutoSize = true;
-            btnHeroAttack.Location = new Point(109, 223);
-            btnHeroAttack.Name = "btnHeroAttack";
-            btnHeroAttack.Size = new Size(94, 30);
-            btnHeroAttack.TabIndex = 16;
-            btnHeroAttack.Text = "Attack";
-            btnHeroAttack.UseVisualStyleBackColor = true;
-            btnHeroAttack.Click += btnHeroAttack_Click;
+            btnPlayerAttack.AutoSize = true;
+            btnPlayerAttack.Location = new Point(109, 223);
+            btnPlayerAttack.Name = "btnPlayerAttack";
+            btnPlayerAttack.Size = new Size(94, 30);
+            btnPlayerAttack.TabIndex = 16;
+            btnPlayerAttack.Text = "Attack";
+            btnPlayerAttack.UseVisualStyleBackColor = true;
+            btnPlayerAttack.Click += btnPlayerAttack_Click_1;
             // 
-            // btnHealHero
+            // btnHealPlayer
             // 
-            btnHealHero.AutoSize = true;
-            btnHealHero.Location = new Point(109, 269);
-            btnHealHero.Name = "btnHealHero";
-            btnHealHero.Size = new Size(94, 30);
-            btnHealHero.TabIndex = 17;
-            btnHealHero.Text = "Heal";
-            btnHealHero.UseVisualStyleBackColor = true;
-            btnHealHero.Click += btnHealHero_Click;
+            btnHealPlayer.AutoSize = true;
+            btnHealPlayer.Location = new Point(109, 269);
+            btnHealPlayer.Name = "btnHealPlayer";
+            btnHealPlayer.Size = new Size(94, 30);
+            btnHealPlayer.TabIndex = 17;
+            btnHealPlayer.Text = "Heal";
+            btnHealPlayer.UseVisualStyleBackColor = true;
+            btnHealPlayer.Click += btnHealPlayer_Click;
             // 
-            // btnHealMonster
+            // btnHealEnnemy
             // 
-            btnHealMonster.AutoSize = true;
-            btnHealMonster.Location = new Point(384, 269);
-            btnHealMonster.Name = "btnHealMonster";
-            btnHealMonster.Size = new Size(94, 30);
-            btnHealMonster.TabIndex = 18;
-            btnHealMonster.Text = "Heal";
-            btnHealMonster.UseVisualStyleBackColor = true;
+            btnHealEnnemy.AutoSize = true;
+            btnHealEnnemy.Location = new Point(384, 269);
+            btnHealEnnemy.Name = "btnHealEnnemy";
+            btnHealEnnemy.Size = new Size(94, 30);
+            btnHealEnnemy.TabIndex = 18;
+            btnHealEnnemy.Text = "Heal";
+            btnHealEnnemy.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnHealMonster);
-            Controls.Add(btnHealHero);
-            Controls.Add(btnHeroAttack);
-            Controls.Add(btnMonsterAttack);
-            Controls.Add(lblMonsterAttack);
-            Controls.Add(lblMonsterDefense);
-            Controls.Add(lblMonsterCurrentPv);
-            Controls.Add(lblMonsterMaxDefense);
-            Controls.Add(lblMonsterPvMax);
-            Controls.Add(lblHeroAttack);
-            Controls.Add(lblHeroDefense);
-            Controls.Add(lblHeroCurrentPv);
-            Controls.Add(lblHeroMaxDefense);
-            Controls.Add(lblHeroPvMax);
+            Controls.Add(btnHealEnnemy);
+            Controls.Add(btnHealPlayer);
+            Controls.Add(btnPlayerAttack);
+            Controls.Add(btnEnnemyAttack);
+            Controls.Add(lblEnnemyAttack);
+            Controls.Add(lblEnnemyDefense);
+            Controls.Add(lblEnnemyCurrentPv);
+            Controls.Add(lblEnnemyMaxDefense);
+            Controls.Add(lblEnnemyPvMax);
+            Controls.Add(lblPlayerAttack);
+            Controls.Add(lblPlayerDefense);
+            Controls.Add(lblPlayerCurrentPv);
+            Controls.Add(lblPlayerMaxDefense);
+            Controls.Add(lblPlayerPvMax);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -205,19 +205,19 @@
 
         #endregion
 
-        private Label lblHeroPvMax;
-        private Label lblHeroMaxDefense;
-        private Label lblHeroCurrentPv;
-        private Label lblHeroDefense;
-        private Label lblHeroAttack;
-        private Label lblMonsterAttack;
-        private Label lblMonsterDefense;
-        private Label lblMonsterCurrentPv;
-        private Label lblMonsterMaxDefense;
-        private Label lblMonsterPvMax;
-        private Button btnMonsterAttack;
-        private Button btnHeroAttack;
-        private Button btnHealHero;
-        private Button btnHealMonster;
+        private Label lblPlayerPvMax;
+        private Label lblPlayerMaxDefense;
+        private Label lblPlayerCurrentPv;
+        private Label lblPlayerDefense;
+        private Label lblPlayerAttack;
+        private Label lblEnnemyAttack;
+        private Label lblEnnemyDefense;
+        private Label lblEnnemyCurrentPv;
+        private Label lblEnnemyMaxDefense;
+        private Label lblEnnemyPvMax;
+        private Button btnEnnemyAttack;
+        private Button btnPlayerAttack;
+        private Button btnHealPlayer;
+        private Button btnHealEnnemy;
     }
 }
