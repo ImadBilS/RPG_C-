@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblPlayerPvMax = new Label();
             lblPlayerMaxDefense = new Label();
             lblPlayerCurrentPv = new Label();
@@ -42,6 +43,9 @@
             btnPlayerAttack = new Button();
             btnHealPlayer = new Button();
             btnHealEnnemy = new Button();
+            pictureBox1 = new PictureBox();
+            playerAttackTimer = new System.Windows.Forms.Timer(components);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblPlayerPvMax
@@ -92,7 +96,7 @@
             // lblEnnemyAttack
             // 
             lblEnnemyAttack.AutoSize = true;
-            lblEnnemyAttack.Location = new Point(384, 171);
+            lblEnnemyAttack.Location = new Point(488, 171);
             lblEnnemyAttack.Name = "lblEnnemyAttack";
             lblEnnemyAttack.Size = new Size(103, 20);
             lblEnnemyAttack.TabIndex = 14;
@@ -101,7 +105,7 @@
             // lblEnnemyDefense
             // 
             lblEnnemyDefense.AutoSize = true;
-            lblEnnemyDefense.Location = new Point(384, 138);
+            lblEnnemyDefense.Location = new Point(488, 138);
             lblEnnemyDefense.Name = "lblEnnemyDefense";
             lblEnnemyDefense.Size = new Size(115, 20);
             lblEnnemyDefense.TabIndex = 13;
@@ -110,7 +114,7 @@
             // lblEnnemyCurrentPv
             // 
             lblEnnemyCurrentPv.AutoSize = true;
-            lblEnnemyCurrentPv.Location = new Point(384, 76);
+            lblEnnemyCurrentPv.Location = new Point(488, 76);
             lblEnnemyCurrentPv.Name = "lblEnnemyCurrentPv";
             lblEnnemyCurrentPv.Size = new Size(124, 20);
             lblEnnemyCurrentPv.TabIndex = 12;
@@ -119,7 +123,7 @@
             // lblEnnemyMaxDefense
             // 
             lblEnnemyMaxDefense.AutoSize = true;
-            lblEnnemyMaxDefense.Location = new Point(384, 108);
+            lblEnnemyMaxDefense.Location = new Point(488, 108);
             lblEnnemyMaxDefense.Name = "lblEnnemyMaxDefense";
             lblEnnemyMaxDefense.Size = new Size(143, 20);
             lblEnnemyMaxDefense.TabIndex = 11;
@@ -128,7 +132,7 @@
             // lblEnnemyPvMax
             // 
             lblEnnemyPvMax.AutoSize = true;
-            lblEnnemyPvMax.Location = new Point(384, 45);
+            lblEnnemyPvMax.Location = new Point(488, 45);
             lblEnnemyPvMax.Name = "lblEnnemyPvMax";
             lblEnnemyPvMax.Size = new Size(104, 20);
             lblEnnemyPvMax.TabIndex = 10;
@@ -137,7 +141,7 @@
             // btnEnnemyAttack
             // 
             btnEnnemyAttack.AutoSize = true;
-            btnEnnemyAttack.Location = new Point(384, 223);
+            btnEnnemyAttack.Location = new Point(488, 223);
             btnEnnemyAttack.Name = "btnEnnemyAttack";
             btnEnnemyAttack.Size = new Size(94, 30);
             btnEnnemyAttack.TabIndex = 15;
@@ -170,18 +174,33 @@
             // btnHealEnnemy
             // 
             btnHealEnnemy.AutoSize = true;
-            btnHealEnnemy.Location = new Point(384, 269);
+            btnHealEnnemy.Location = new Point(488, 269);
             btnHealEnnemy.Name = "btnHealEnnemy";
             btnHealEnnemy.Size = new Size(94, 30);
             btnHealEnnemy.TabIndex = 18;
             btnHealEnnemy.Text = "Heal";
             btnHealEnnemy.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(319, 70);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(69, 69);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 19;
+            pictureBox1.TabStop = false;
+            // 
+            // playerAttackTimer
+            // 
+            playerAttackTimer.Interval = 1000;
+            playerAttackTimer.Tick += playerAttackTimer_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(btnHealEnnemy);
             Controls.Add(btnHealPlayer);
             Controls.Add(btnPlayerAttack);
@@ -199,6 +218,7 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -219,5 +239,7 @@
         private Button btnPlayerAttack;
         private Button btnHealPlayer;
         private Button btnHealEnnemy;
+        private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer playerAttackTimer;
     }
 }

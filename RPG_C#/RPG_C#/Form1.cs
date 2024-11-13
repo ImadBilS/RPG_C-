@@ -2,9 +2,14 @@ namespace RPG_C_
 {
     public partial class Form1 : Form
     {
+        //Chemin de l'image pour le sprite du joueur 
+        private string playerFight = @"img\player\fight.gif";
+        private string playerAttack = @"img\player\attack .gif";
+
         public Form1()
         {
             InitializeComponent();
+            pictureBox1.Image = Image.FromFile(playerFight);
 
         }
 
@@ -49,6 +54,9 @@ namespace RPG_C_
             {
                 MessageBox.Show("You win");
             }
+            pictureBox1.Size = new Size(154, 79);
+            pictureBox1.Image = Image.FromFile(playerAttack);
+            playerAttackTimer.Start();
         }
 
         private void btnEnnemyAttack_Click_1(object sender, EventArgs e)
@@ -93,6 +101,13 @@ namespace RPG_C_
                 btnHealPlayer.Enabled = false;
                 MessageBox.Show("You don't have any more life potion");
             }
+        }
+
+        private void playerAttackTimer_Tick(object sender, EventArgs e)
+        {
+            pictureBox1.Size = new Size(69, 69);
+            pictureBox1.Image = Image.FromFile(playerFight);
+            playerAttackTimer.Stop();
         }
     }
 }
