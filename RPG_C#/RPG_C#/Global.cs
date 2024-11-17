@@ -10,7 +10,7 @@ namespace RPG_C_
     {
         //public Monster(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense)
         //public static Heros heros = new Heros(90, 100, 20, 13, 12);
-        public static Player player = new Player(90, 100, 20, 13, 12,3);
+        public static Player player = new Player(90, 100, 20, 13, 12,6);
         //public static Ennemy ennemy = new Ennemy(90, 100, 20, 13, 12);
 
         //random stat ennemy

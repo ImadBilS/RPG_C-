@@ -49,6 +49,7 @@
             PbArena = new PictureBox();
             ennemyAttackTimer = new System.Windows.Forms.Timer(components);
             playerHealTimer = new System.Windows.Forms.Timer(components);
+            lblPlayerPotion = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbArena).BeginInit();
@@ -234,11 +235,21 @@
             playerHealTimer.Interval = 1000;
             playerHealTimer.Tick += playerHealTimer_Tick;
             // 
+            // lblPlayerPotion
+            // 
+            lblPlayerPotion.AutoSize = true;
+            lblPlayerPotion.Location = new Point(110, 313);
+            lblPlayerPotion.Name = "lblPlayerPotion";
+            lblPlayerPotion.Size = new Size(91, 20);
+            lblPlayerPotion.TabIndex = 22;
+            lblPlayerPotion.Text = "PlayerPotion";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblPlayerPotion);
             Controls.Add(PbArena);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -288,5 +299,6 @@
         private PictureBox PbArena;
         private System.Windows.Forms.Timer ennemyAttackTimer;
         private System.Windows.Forms.Timer playerHealTimer;
+        private Label lblPlayerPotion;
     }
 }
