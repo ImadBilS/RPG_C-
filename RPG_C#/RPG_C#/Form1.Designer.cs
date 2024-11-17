@@ -50,6 +50,7 @@
             ennemyAttackTimer = new System.Windows.Forms.Timer(components);
             playerHealTimer = new System.Windows.Forms.Timer(components);
             lblPlayerPotion = new Label();
+            btnMapOpen = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbArena).BeginInit();
@@ -58,99 +59,100 @@
             // lblPlayerPvMax
             // 
             lblPlayerPvMax.AutoSize = true;
-            lblPlayerPvMax.Location = new Point(109, 45);
+            lblPlayerPvMax.Location = new Point(95, 34);
             lblPlayerPvMax.Name = "lblPlayerPvMax";
-            lblPlayerPvMax.Size = new Size(92, 20);
+            lblPlayerPvMax.Size = new Size(75, 15);
             lblPlayerPvMax.TabIndex = 0;
             lblPlayerPvMax.Text = "PlayerPvMax";
             // 
             // lblPlayerMaxDefense
             // 
             lblPlayerMaxDefense.AutoSize = true;
-            lblPlayerMaxDefense.Location = new Point(109, 108);
+            lblPlayerMaxDefense.Location = new Point(95, 81);
             lblPlayerMaxDefense.Name = "lblPlayerMaxDefense";
-            lblPlayerMaxDefense.Size = new Size(131, 20);
+            lblPlayerMaxDefense.Size = new Size(104, 15);
             lblPlayerMaxDefense.TabIndex = 1;
             lblPlayerMaxDefense.Text = "PlayerMaxDefense";
             // 
             // lblPlayerCurrentPv
             // 
             lblPlayerCurrentPv.AutoSize = true;
-            lblPlayerCurrentPv.Location = new Point(109, 76);
+            lblPlayerCurrentPv.Location = new Point(95, 57);
             lblPlayerCurrentPv.Name = "lblPlayerCurrentPv";
-            lblPlayerCurrentPv.Size = new Size(112, 20);
+            lblPlayerCurrentPv.Size = new Size(92, 15);
             lblPlayerCurrentPv.TabIndex = 2;
             lblPlayerCurrentPv.Text = "PlayerCurrentPv";
             // 
             // lblPlayerDefense
             // 
             lblPlayerDefense.AutoSize = true;
-            lblPlayerDefense.Location = new Point(109, 138);
+            lblPlayerDefense.Location = new Point(95, 104);
             lblPlayerDefense.Name = "lblPlayerDefense";
-            lblPlayerDefense.Size = new Size(103, 20);
+            lblPlayerDefense.Size = new Size(81, 15);
             lblPlayerDefense.TabIndex = 3;
             lblPlayerDefense.Text = "PlayerDefense";
             // 
             // lblPlayerAttack
             // 
             lblPlayerAttack.AutoSize = true;
-            lblPlayerAttack.Location = new Point(109, 171);
+            lblPlayerAttack.Location = new Point(95, 128);
             lblPlayerAttack.Name = "lblPlayerAttack";
-            lblPlayerAttack.Size = new Size(91, 20);
+            lblPlayerAttack.Size = new Size(73, 15);
             lblPlayerAttack.TabIndex = 4;
             lblPlayerAttack.Text = "PlayerAttack";
             // 
             // lblEnnemyAttack
             // 
             lblEnnemyAttack.AutoSize = true;
-            lblEnnemyAttack.Location = new Point(598, 171);
+            lblEnnemyAttack.Location = new Point(523, 128);
             lblEnnemyAttack.Name = "lblEnnemyAttack";
-            lblEnnemyAttack.Size = new Size(103, 20);
+            lblEnnemyAttack.Size = new Size(84, 15);
             lblEnnemyAttack.TabIndex = 14;
             lblEnnemyAttack.Text = "EnnemyAttack";
             // 
             // lblEnnemyDefense
             // 
             lblEnnemyDefense.AutoSize = true;
-            lblEnnemyDefense.Location = new Point(598, 138);
+            lblEnnemyDefense.Location = new Point(523, 104);
             lblEnnemyDefense.Name = "lblEnnemyDefense";
-            lblEnnemyDefense.Size = new Size(115, 20);
+            lblEnnemyDefense.Size = new Size(92, 15);
             lblEnnemyDefense.TabIndex = 13;
             lblEnnemyDefense.Text = "EnnemyDefense";
             // 
             // lblEnnemyCurrentPv
             // 
             lblEnnemyCurrentPv.AutoSize = true;
-            lblEnnemyCurrentPv.Location = new Point(598, 76);
+            lblEnnemyCurrentPv.Location = new Point(523, 57);
             lblEnnemyCurrentPv.Name = "lblEnnemyCurrentPv";
-            lblEnnemyCurrentPv.Size = new Size(124, 20);
+            lblEnnemyCurrentPv.Size = new Size(103, 15);
             lblEnnemyCurrentPv.TabIndex = 12;
             lblEnnemyCurrentPv.Text = "EnnemyCurrentPv";
             // 
             // lblEnnemyMaxDefense
             // 
             lblEnnemyMaxDefense.AutoSize = true;
-            lblEnnemyMaxDefense.Location = new Point(598, 108);
+            lblEnnemyMaxDefense.Location = new Point(523, 81);
             lblEnnemyMaxDefense.Name = "lblEnnemyMaxDefense";
-            lblEnnemyMaxDefense.Size = new Size(143, 20);
+            lblEnnemyMaxDefense.Size = new Size(115, 15);
             lblEnnemyMaxDefense.TabIndex = 11;
             lblEnnemyMaxDefense.Text = "EnnemyMaxDefense";
             // 
             // lblEnnemyPvMax
             // 
             lblEnnemyPvMax.AutoSize = true;
-            lblEnnemyPvMax.Location = new Point(598, 45);
+            lblEnnemyPvMax.Location = new Point(523, 34);
             lblEnnemyPvMax.Name = "lblEnnemyPvMax";
-            lblEnnemyPvMax.Size = new Size(104, 20);
+            lblEnnemyPvMax.Size = new Size(86, 15);
             lblEnnemyPvMax.TabIndex = 10;
             lblEnnemyPvMax.Text = "EnnemyPvMax";
             // 
             // btnEnnemyAttack
             // 
             btnEnnemyAttack.AutoSize = true;
-            btnEnnemyAttack.Location = new Point(598, 223);
+            btnEnnemyAttack.Location = new Point(523, 167);
+            btnEnnemyAttack.Margin = new Padding(3, 2, 3, 2);
             btnEnnemyAttack.Name = "btnEnnemyAttack";
-            btnEnnemyAttack.Size = new Size(94, 30);
+            btnEnnemyAttack.Size = new Size(82, 25);
             btnEnnemyAttack.TabIndex = 15;
             btnEnnemyAttack.Text = "Attack";
             btnEnnemyAttack.UseVisualStyleBackColor = true;
@@ -159,9 +161,10 @@
             // btnPlayerAttack
             // 
             btnPlayerAttack.AutoSize = true;
-            btnPlayerAttack.Location = new Point(109, 223);
+            btnPlayerAttack.Location = new Point(95, 167);
+            btnPlayerAttack.Margin = new Padding(3, 2, 3, 2);
             btnPlayerAttack.Name = "btnPlayerAttack";
-            btnPlayerAttack.Size = new Size(94, 30);
+            btnPlayerAttack.Size = new Size(82, 25);
             btnPlayerAttack.TabIndex = 16;
             btnPlayerAttack.Text = "Attack";
             btnPlayerAttack.UseVisualStyleBackColor = true;
@@ -170,9 +173,10 @@
             // btnHealPlayer
             // 
             btnHealPlayer.AutoSize = true;
-            btnHealPlayer.Location = new Point(109, 269);
+            btnHealPlayer.Location = new Point(95, 202);
+            btnHealPlayer.Margin = new Padding(3, 2, 3, 2);
             btnHealPlayer.Name = "btnHealPlayer";
-            btnHealPlayer.Size = new Size(94, 30);
+            btnHealPlayer.Size = new Size(82, 25);
             btnHealPlayer.TabIndex = 17;
             btnHealPlayer.Text = "Heal";
             btnHealPlayer.UseVisualStyleBackColor = true;
@@ -181,9 +185,10 @@
             // btnHealEnnemy
             // 
             btnHealEnnemy.AutoSize = true;
-            btnHealEnnemy.Location = new Point(598, 269);
+            btnHealEnnemy.Location = new Point(523, 202);
+            btnHealEnnemy.Margin = new Padding(3, 2, 3, 2);
             btnHealEnnemy.Name = "btnHealEnnemy";
-            btnHealEnnemy.Size = new Size(94, 30);
+            btnHealEnnemy.Size = new Size(82, 25);
             btnHealEnnemy.TabIndex = 18;
             btnHealEnnemy.Text = "Heal";
             btnHealEnnemy.UseVisualStyleBackColor = true;
@@ -192,9 +197,10 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(366, 296);
+            pictureBox1.Location = new Point(320, 222);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(84, 116);
+            pictureBox1.Size = new Size(74, 87);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
@@ -208,9 +214,10 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
-            pictureBox2.Location = new Point(381, 108);
+            pictureBox2.Location = new Point(333, 81);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(69, 69);
+            pictureBox2.Size = new Size(60, 52);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 20;
             pictureBox2.TabStop = false;
@@ -218,9 +225,10 @@
             // PbArena
             // 
             PbArena.BackColor = Color.Transparent;
-            PbArena.Location = new Point(289, 45);
+            PbArena.Location = new Point(253, 34);
+            PbArena.Margin = new Padding(3, 2, 3, 2);
             PbArena.Name = "PbArena";
-            PbArena.Size = new Size(248, 208);
+            PbArena.Size = new Size(217, 156);
             PbArena.SizeMode = PictureBoxSizeMode.StretchImage;
             PbArena.TabIndex = 21;
             PbArena.TabStop = false;
@@ -238,17 +246,28 @@
             // lblPlayerPotion
             // 
             lblPlayerPotion.AutoSize = true;
-            lblPlayerPotion.Location = new Point(110, 313);
+            lblPlayerPotion.Location = new Point(96, 235);
             lblPlayerPotion.Name = "lblPlayerPotion";
-            lblPlayerPotion.Size = new Size(91, 20);
+            lblPlayerPotion.Size = new Size(74, 15);
             lblPlayerPotion.TabIndex = 22;
             lblPlayerPotion.Text = "PlayerPotion";
             // 
+            // btnMapOpen
+            // 
+            btnMapOpen.Location = new Point(616, 285);
+            btnMapOpen.Name = "btnMapOpen";
+            btnMapOpen.Size = new Size(72, 41);
+            btnMapOpen.TabIndex = 23;
+            btnMapOpen.Text = "Afficher la map";
+            btnMapOpen.UseVisualStyleBackColor = true;
+            btnMapOpen.Click += btnMapOpen_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
+            Controls.Add(btnMapOpen);
             Controls.Add(lblPlayerPotion);
             Controls.Add(PbArena);
             Controls.Add(pictureBox2);
@@ -267,6 +286,7 @@
             Controls.Add(lblPlayerCurrentPv);
             Controls.Add(lblPlayerMaxDefense);
             Controls.Add(lblPlayerPvMax);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -300,5 +320,6 @@
         private System.Windows.Forms.Timer ennemyAttackTimer;
         private System.Windows.Forms.Timer playerHealTimer;
         private Label lblPlayerPotion;
+        private Button btnMapOpen;
     }
 }
