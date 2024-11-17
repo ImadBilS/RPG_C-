@@ -49,6 +49,7 @@
             PbArena = new PictureBox();
             ennemyAttackTimer = new System.Windows.Forms.Timer(components);
             ennemyAttack = new PictureBox();
+            playerHealTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbArena).BeginInit();
@@ -241,6 +242,11 @@
             ennemyAttack.TabIndex = 22;
             ennemyAttack.TabStop = false;
             // 
+            // playerHealTimer
+            // 
+            playerHealTimer.Interval = 1000;
+            playerHealTimer.Tick += playerHealTimer_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -297,5 +303,6 @@
         private PictureBox PbArena;
         private System.Windows.Forms.Timer ennemyAttackTimer;
         private PictureBox ennemyAttack;
+        private System.Windows.Forms.Timer playerHealTimer;
     }
 }
