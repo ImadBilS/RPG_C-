@@ -1,10 +1,11 @@
 using System.Windows.Forms;
+using test_diminution;
 
 namespace RPG_C_
 {
     public partial class Form1 : Form
     {
-        
+
         //Chemin de l'image pour le sprite du joueur 
         private string playerFight = @"img\player\fight.gif";
         private string playerAttack = @"img\player\attack.gif";
@@ -42,7 +43,7 @@ namespace RPG_C_
                     ennemyFight = @"img\ennemy\king_slime.png";
                     break;
             }
-            
+
 
 
             //-----------------------------------------
@@ -163,7 +164,7 @@ namespace RPG_C_
             if (Global.player.GetCurrentHp() < Global.player.GetMaxHp())
             {
 
-                if(Global.player.GetCurrentHp() + 20 > Global.player.GetMaxHp())
+                if (Global.player.GetCurrentHp() + 20 > Global.player.GetMaxHp())
                 {
                     Global.player.SetCurrentHp(Global.player.GetMaxHp());
                 }
@@ -186,14 +187,14 @@ namespace RPG_C_
             }
 
 
-                /*
-            if (Global.player.GetCurrentHp() > Global.player.GetMaxHp())
-            {
-                Global.player.SetCurrentHp(Global.player.GetMaxHp());
-                MessageBox.Show("You are full life");
-            }
+            /*
+        if (Global.player.GetCurrentHp() > Global.player.GetMaxHp())
+        {
+            Global.player.SetCurrentHp(Global.player.GetMaxHp());
+            MessageBox.Show("You are full life");
+        }
 
-                */
+            */
             if (Global.player.getNbLifePotion() == 0)
             {
                 btnHealPlayer.Enabled = false;
@@ -220,10 +221,16 @@ namespace RPG_C_
 
         private void playerHealTimer_Tick(object sender, EventArgs e)
         {
-            
+
             pictureBox1.Image = Image.FromFile(playerFight);
             pictureBox1.BackgroundImage = null;
             ennemyAttackTimer.Stop();
+        }
+
+        private void btnMapOpen_Click(object sender, EventArgs e)
+        {
+            Map laNouvelleFenetreMap = new Map();
+            laNouvelleFenetreMap.Show();
         }
     }
 }
