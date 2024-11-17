@@ -4,6 +4,7 @@ namespace RPG_C_
 {
     public partial class Form1 : Form
     {
+        
         //Chemin de l'image pour le sprite du joueur 
         private string playerFight = @"img\player\fight.gif";
         private string playerAttack = @"img\player\attack.gif";
@@ -19,18 +20,32 @@ namespace RPG_C_
         public Form1()
         {
             InitializeComponent();
-            /*
             pictureBox1.Image = Image.FromFile(playerFight);
-            //pictureBox2.Image = Image.FromFile(ennemyFight);
+
+            //-----------------------------------------
+            int rnd = Global.rnd.Next(1, 4);
+            switch (rnd)
+            {
+                case 1:
+                    ennemyFight = @"img\ennemy\Taurus.png";
+                    break;
+                case 2:
+                    ennemyFight = @"img\ennemy\axeDragon.png";
+                    break;
+                case 3:
+                    ennemyFight = @"img\ennemy\bat.png";
+                    break;
+                case 4:
+                    ennemyFight = @"img\ennemy\zombie.png";
+                    break;
+                default:
+                    ennemyFight = @"img\ennemy\king_slime.png";
+                    break;
+            }
             
-            pictureBox2.BackgroundImage = Image.FromFile(ennemyFight);
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            PbArena.BackgroundImage = Image.FromFile(forestArena);
-            pictureBox2.BackColor = Color.Transparent;
-            */
 
 
-            pictureBox1.Image = Image.FromFile(playerFight);
+            //-----------------------------------------
 
             if (File.Exists(ennemyFight))
             {
@@ -123,16 +138,6 @@ namespace RPG_C_
             lblEnnemyMaxDefense.Text = "EnnemyMaxDefense : " + Global.ennemy.GetMaxDefense();
             lblEnnemyDefense.Text = "EnnemyDefense : " + Global.ennemy.GetCurrentDefense();
             lblEnnemyAttack.Text = "EnnemyAttack : " + Global.ennemy.GetAttackPower();
-            /*
-            if (Global.player.GetCurrentHp() <= 0)
-            {
-                MessageBox.Show("You lose");
-            }
-            else if (Global.ennemy.GetCurrentHp() <= 0)
-            {
-                MessageBox.Show("You win");
-            }
-            */
             if (Global.player.hasDied())
             {
                 MessageBox.Show("You lose");
@@ -155,6 +160,11 @@ namespace RPG_C_
                 MessageBox.Show("You don't have any more life potion");
             }
 
+            if (Global.player.GetCurrentHp() > Global.player.GetMaxHp())
+            {
+                Global.player.SetCurrentHp(Global.player.GetMaxHp());
+            }
+
             pictureBox1.BackgroundImage = Image.FromFile(playerHeal);
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = Image.FromFile(healEffect);
@@ -169,7 +179,6 @@ namespace RPG_C_
 
         private void ennemyAttackTimer_Tick(object sender, EventArgs e)
         {
-            ennemyAttack.Image = null;
             pictureBox1.Image = Image.FromFile(playerFight);
             pictureBox1.BackgroundImage = null;
             ennemyAttackTimer.Stop();
