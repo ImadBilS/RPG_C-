@@ -47,9 +47,13 @@
             playerAttackTimer = new System.Windows.Forms.Timer(components);
             pictureBox2 = new PictureBox();
             PbArena = new PictureBox();
+            ennemyAttackTimer = new System.Windows.Forms.Timer(components);
+            ennemyAttack = new PictureBox();
+            playerHealTimer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbArena).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ennemyAttack).BeginInit();
             SuspendLayout();
             // 
             // lblPlayerPvMax
@@ -188,10 +192,11 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Location = new Point(366, 299);
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(366, 296);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(69, 69);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.Size = new Size(84, 116);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
@@ -204,7 +209,7 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
-            pictureBox2.Location = new Point(366, 138);
+            pictureBox2.Location = new Point(381, 108);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(69, 69);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -214,18 +219,40 @@
             // PbArena
             // 
             PbArena.BackColor = Color.Transparent;
-            PbArena.Location = new Point(276, 45);
+            PbArena.Location = new Point(289, 45);
             PbArena.Name = "PbArena";
             PbArena.Size = new Size(248, 208);
             PbArena.SizeMode = PictureBoxSizeMode.StretchImage;
             PbArena.TabIndex = 21;
             PbArena.TabStop = false;
             // 
+            // ennemyAttackTimer
+            // 
+            ennemyAttackTimer.Interval = 1000;
+            ennemyAttackTimer.Tick += ennemyAttackTimer_Tick;
+            // 
+            // ennemyAttack
+            // 
+            ennemyAttack.BackColor = Color.Transparent;
+            ennemyAttack.BackgroundImageLayout = ImageLayout.Stretch;
+            ennemyAttack.Location = new Point(238, 307);
+            ennemyAttack.Name = "ennemyAttack";
+            ennemyAttack.Size = new Size(84, 76);
+            ennemyAttack.SizeMode = PictureBoxSizeMode.StretchImage;
+            ennemyAttack.TabIndex = 22;
+            ennemyAttack.TabStop = false;
+            // 
+            // playerHealTimer
+            // 
+            playerHealTimer.Interval = 1000;
+            playerHealTimer.Tick += playerHealTimer_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ennemyAttack);
             Controls.Add(PbArena);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -249,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbArena).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ennemyAttack).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -273,5 +301,8 @@
         private System.Windows.Forms.Timer playerAttackTimer;
         private PictureBox pictureBox2;
         private PictureBox PbArena;
+        private System.Windows.Forms.Timer ennemyAttackTimer;
+        private PictureBox ennemyAttack;
+        private System.Windows.Forms.Timer playerHealTimer;
     }
 }

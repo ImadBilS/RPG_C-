@@ -10,6 +10,11 @@ namespace RPG_C_
         private string ennemyFight = @"img\ennemy\king_slime.png";
         //private string playerAttack = @"img\player\fight.gif";
         private string forestArena = @"img\arena\forest.png";
+        private string ennemyAttackGif = @"img\effect\ennemy_attack.gif";
+        private string playerHitted = @"img\player\hitted.png";
+        private string playerHeal = @"img\player\healed.png";
+        private string healEffect = @"img\effect\heal.gif";
+
 
         public Form1()
         {
@@ -63,8 +68,6 @@ namespace RPG_C_
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
             lblPlayerPvMax.Text += " : " + Global.player.GetMaxHp();
             lblPlayerCurrentPv.Text += " : " + Global.player.GetCurrentHp();
             lblPlayerMaxDefense.Text += " : " + Global.player.GetMaxDefense();
@@ -76,9 +79,6 @@ namespace RPG_C_
             lblEnnemyMaxDefense.Text += " : " + Global.ennemy.GetMaxDefense();
             lblEnnemyDefense.Text += " : " + Global.ennemy.GetCurrentDefense();
             lblEnnemyAttack.Text += " : " + Global.ennemy.GetAttackPower();
-
-
-
         }
 
         private void btnPlayerAttack_Click_1(object sender, EventArgs e)
@@ -103,7 +103,6 @@ namespace RPG_C_
                 MessageBox.Show("You win");
             }
 
-            PbArena.Show();
             pictureBox2.Image = Image.FromFile(playerAttack);
             playerAttackTimer.Start();
         }
@@ -139,6 +138,11 @@ namespace RPG_C_
                 MessageBox.Show("You lose");
             }
 
+            //ennemyAttack.Image = Image.FromFile(ennemyAttackGif);
+            pictureBox1.BackgroundImage = Image.FromFile(playerHitted);
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = Image.FromFile(ennemyAttackGif);
+            ennemyAttackTimer.Start();
         }
 
         private void btnHealPlayer_Click(object sender, EventArgs e)
@@ -150,6 +154,12 @@ namespace RPG_C_
                 btnHealPlayer.Enabled = false;
                 MessageBox.Show("You don't have any more life potion");
             }
+
+            pictureBox1.BackgroundImage = Image.FromFile(playerHeal);
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Image = Image.FromFile(healEffect);
+            pictureBox1.Image = ImageLayout.Stretch;
+            ennemyAttackTimer.Start();
         }
 
         private void playerAttackTimer_Tick(object sender, EventArgs e)
@@ -158,6 +168,20 @@ namespace RPG_C_
             playerAttackTimer.Stop();
         }
 
+        private void ennemyAttackTimer_Tick(object sender, EventArgs e)
+        {
+            ennemyAttack.Image = null;
+            pictureBox1.Image = Image.FromFile(playerFight);
+            pictureBox1.BackgroundImage = null;
+            ennemyAttackTimer.Stop();
+        }
 
+        private void playerHealTimer_Tick(object sender, EventArgs e)
+        {
+            
+            pictureBox1.Image = Image.FromFile(playerFight);
+            pictureBox1.BackgroundImage = null;
+            ennemyAttackTimer.Stop();
+        }
     }
 }
