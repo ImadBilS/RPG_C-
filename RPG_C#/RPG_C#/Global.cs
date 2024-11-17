@@ -19,7 +19,5 @@ namespace RPG_C_
         public static int randomAttack = rnd.Next(15, 25);
         public static int randomDefense = rnd.Next(10, 15);
         public static Ennemy ennemy = new Ennemy(randomHp, randomHp, randomAttack, randomDefense, randomDefense);
-
-
     }
 }
