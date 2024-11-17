@@ -158,7 +158,6 @@ namespace RPG_C_
             pictureBox1.BackgroundImage = Image.FromFile(playerHeal);
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Image = Image.FromFile(healEffect);
-            pictureBox1.Image = ImageLayout.Stretch;
             ennemyAttackTimer.Start();
         }
 
