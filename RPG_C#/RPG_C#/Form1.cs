@@ -88,6 +88,7 @@ namespace RPG_C_
             lblPlayerMaxDefense.Text += " : " + Global.player.GetMaxDefense();
             lblPlayerDefense.Text += " : " + Global.player.GetCurrentDefense();
             lblPlayerAttack.Text += " : " + Global.player.GetAttackPower();
+            lblPlayerPotion.Text += " : " + Global.player.getNbLifePotion();
 
             lblEnnemyPvMax.Text += " : " + Global.ennemy.GetMaxHp();
             lblEnnemyCurrentPv.Text += " : " + Global.ennemy.GetCurrentHp();
@@ -99,19 +100,25 @@ namespace RPG_C_
         private void btnPlayerAttack_Click_1(object sender, EventArgs e)
         {
             Global.player.attackEnnemy(Global.ennemy);
-
+            /*
             lblPlayerPvMax.Text = "PlayerPvMax : " + Global.player.GetMaxHp();
+            
             lblPlayerCurrentPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
+            
             lblPlayerMaxDefense.Text = "PlayerMaxDefense : " + Global.player.GetMaxDefense();
             lblPlayerDefense.Text = "PlayerDefense : " + Global.player.GetCurrentDefense();
             lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
+            */
 
 
-            lblEnnemyPvMax.Text = "EnnemyPvMax : " + Global.ennemy.GetMaxHp();
+
+            //lblEnnemyPvMax.Text = "EnnemyPvMax : " + Global.ennemy.GetMaxHp();
             lblEnnemyCurrentPv.Text = "EnnemyCurrentPv : " + Global.ennemy.GetCurrentHp();
+            /*
             lblEnnemyMaxDefense.Text = "EnnemyMaxDefense : " + Global.ennemy.GetMaxDefense();
             lblEnnemyDefense.Text = "EnnemyDefense : " + Global.ennemy.GetCurrentDefense();
             lblEnnemyAttack.Text = "EnnemyAttack : " + Global.ennemy.GetAttackPower();
+            */
 
             if (Global.ennemy.hasDied())
             {
@@ -152,23 +159,50 @@ namespace RPG_C_
 
         private void btnHealPlayer_Click(object sender, EventArgs e)
         {
-            Global.player.heal();
-            lblPlayerCurrentPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
+
+            if (Global.player.GetCurrentHp() < Global.player.GetMaxHp())
+            {
+
+                if(Global.player.GetCurrentHp() + 20 > Global.player.GetMaxHp())
+                {
+                    Global.player.SetCurrentHp(Global.player.GetMaxHp());
+                }
+                else
+                {
+                    Global.player.heal();
+                }
+
+                lblPlayerCurrentPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
+                lblPlayerPotion.Text = "PlayerPotion : " + Global.player.getNbLifePotion();
+
+                pictureBox1.BackgroundImage = Image.FromFile(playerHeal);
+                pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+                pictureBox1.Image = Image.FromFile(healEffect);
+                playerHealTimer.Start();
+            }
+            else
+            {
+                MessageBox.Show("You are full life");
+            }
+
+
+                /*
+            if (Global.player.GetCurrentHp() > Global.player.GetMaxHp())
+            {
+                Global.player.SetCurrentHp(Global.player.GetMaxHp());
+                MessageBox.Show("You are full life");
+            }
+
+                */
             if (Global.player.getNbLifePotion() == 0)
             {
                 btnHealPlayer.Enabled = false;
                 MessageBox.Show("You don't have any more life potion");
             }
 
-            if (Global.player.GetCurrentHp() > Global.player.GetMaxHp())
-            {
-                Global.player.SetCurrentHp(Global.player.GetMaxHp());
-            }
 
-            pictureBox1.BackgroundImage = Image.FromFile(playerHeal);
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Image = Image.FromFile(healEffect);
-            ennemyAttackTimer.Start();
+
+
         }
 
         private void playerAttackTimer_Tick(object sender, EventArgs e)
