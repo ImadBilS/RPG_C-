@@ -66,4 +66,50 @@ namespace RPG_C_
             this.lifePointRestored = lifePointRestored;
         }
     }
+
+    class CocaShield: Item
+    {
+        private int shieldPointRestored;
+
+        public CocaShield(string name, int quantity, string description, Single dropRate, int shieldPointRestored) : base(name, quantity, description, dropRate)
+        {
+            this.shieldPointRestored = shieldPointRestored;
+        }
+    }
+
+    class Sword : Item
+    {
+        private int attackPower;
+        private int level;
+
+        public Sword(string name, int quantity, string description, Single dropRate, int attackPower, int level) : base(name, quantity, description, dropRate)
+        {
+            this.attackPower = attackPower;
+            this.level = level;
+        }
+    }
+
+    class Armor : Item
+    {
+        private int defensePower;
+        private int level;
+
+        public Armor(string name, int quantity, string description, Single dropRate, int defensePower, int level) : base(name, quantity, description, dropRate)
+        {
+            this.defensePower = defensePower;
+            this.level = level;
+        }
+    }
+
+    class HolyPotion : Item
+    {
+        private int lifePointRestored;
+        private int shieldPointRestored;
+
+        public HolyPotion(string name, int quantity, string description, Single dropRate, int lifePointRestored, int shieldPointRestored) : base(name, quantity, description, dropRate)
+        {
+            this.lifePointRestored = lifePointRestored;
+            this.shieldPointRestored = shieldPointRestored;
+        }
+    }
 }
