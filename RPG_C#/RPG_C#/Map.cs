@@ -172,8 +172,6 @@ namespace test_diminution
             // Initialisation du Timer
             moveTimer.Interval = 20;
             moveTimer.Tick += MoveTimer_Tick;
-
-            pb_player.BackColor = Color.Transparent;
         }
 
         // Form Load Event
@@ -181,6 +179,21 @@ namespace test_diminution
         {
             LoadImages();
             LoadMap();
+
+            for (int y = 0; y < 12; y++) // 12 lignes : Y0 à Y11
+            {
+                for (int x = 0; x < 28; x++) // 28 colonnes : X0 à X27
+                {
+                    string name = $"X{x}Y{y}";
+                    var pictureBox = this.Controls.Find(name, true).FirstOrDefault() as PictureBox;
+
+                    if (pictureBox != null)
+                    {
+                        pictureBox.Location = new System.Drawing.Point(x * 64, y * 64);
+                        pictureBox.Size = new System.Drawing.Size(64, 64);
+                    }
+                }
+            }
 
             this.StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
