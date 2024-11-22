@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace RPG_C_
 {
@@ -12,21 +14,21 @@ namespace RPG_C_
         private int CurrentHp;
         private int MaxHp;
         private int AttackPower;
-        private int MaxDefense;
-        private int CurrentDefense;
+        private int Defense;
+        private int Shield;
         private bool isDead;
-
-        public Personnage(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense)
+        //inventaire a faire 
+        public Personnage(int CurrentHp, int MaxHp, int Attack, int Defense, int Shield)
         {
             this.CurrentHp = CurrentHp;
             this.MaxHp = MaxHp;
             this.AttackPower = Attack;
-            this.MaxDefense = MaxDefense;
-            this.CurrentDefense = CurrentDefense;
+            this.Defense = Defense;
+            this.Shield = Shield;
             this.isDead = false;
         }
 
-        //GETTERS
+        // GETTERS
         public int GetCurrentHp()
         {
             return this.CurrentHp;
@@ -39,20 +41,20 @@ namespace RPG_C_
         {
             return this.AttackPower;
         }
-        public int GetCurrentDefense()
+        public int GetShield()
         {
-            return this.CurrentDefense;
+            return this.Shield;
         }
-        public int GetMaxDefense()
+        public int GetDefense()
         {
-            return this.MaxDefense;
+            return this.Defense;
         }
         public bool GetIsDead()
         {
             return this.isDead;
         }
 
-        //SETTERS
+        // SETTERS
         public void SetCurrentHp(int CurrentHp)
         {
             this.CurrentHp = CurrentHp;
@@ -65,14 +67,16 @@ namespace RPG_C_
         {
             this.AttackPower = Attack;
         }
-        public void SetCurrentDefense(int CurrentDefense)
+        public void SetShield(int Shield)
         {
-            this.CurrentDefense = CurrentDefense;
+            this.Shield = Shield;
         }
-        public void SetMaxDefense(int MaxDefense)
+        public void SetDefense(int Defense)
         {
-            this.MaxDefense = MaxDefense;
+            this.Defense = Defense;
         }
+
+        // Méthode pour vérifier si le personnage est mort
         public bool hasDied()
         {
             if (this.CurrentHp <= 0)
@@ -85,27 +89,36 @@ namespace RPG_C_
 
     class Player : Personnage
     {
-        private int nbLifePotion;
+        private Sword sword; // Ajout de l'épée équipée
+        private List<Item> inventory = new List<Item>();
 
-        public Player(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense, int nbLifePotion) : base(CurrentHp, MaxHp, Attack, MaxDefense, CurrentDefense)
+
+        public Player(int CurrentHp, int MaxHp, int Attack, int Defense, int Shield, Sword sword, List<Item> inventory)
+            : base(CurrentHp, MaxHp, Attack, Defense, Shield)
         {
-            this.nbLifePotion = nbLifePotion;
+            this.sword = sword;
+            base.SetAttackPower(Attack + sword.getAttackPower());
+            this.inventory = new List<Item>();
         }
 
-        public int getNbLifePotion()
-        {
-            return this.nbLifePotion;
-        }
 
-        public void setNbLifePotion(int nbLifePotion)
+        public Sword GetSword()
         {
-            this.nbLifePotion = nbLifePotion;
+            return this.sword;
+        }
+        public void equipNewSword(Sword newSword)
+        {
+            int oldSwordAttack = this.sword.getAttackPower();
+            this.sword.setIsEquipped(false);
+            this.sword = newSword;
+            newSword.setIsEquipped(true);
+            this.SetAttackPower(this.GetAttackPower() - oldSwordAttack + newSword.getAttackPower());
         }
 
 
         public void attackEnnemy(Ennemy ennemy)
         {
-            int damage = this.GetAttackPower() - ennemy.GetCurrentDefense();
+            int damage = this.GetAttackPower() - ennemy.GetShield();
             if (ennemy.GetCurrentHp() - this.GetAttackPower() > 0)
             {
                 ennemy.SetCurrentHp(ennemy.GetCurrentHp() - damage);
@@ -115,27 +128,38 @@ namespace RPG_C_
                 ennemy.SetCurrentHp(0);
             }
         }
-
-        public void heal()
+        
+        public void useLifePotion(Item lifePotion)
         {
-            if (this.nbLifePotion > 0)
+            
+        }
+
+        /*
+        // Méthode pour utiliser une potion de vie depuis l'inventaire
+        public void UseLifePotion()
+        {
+            Item potion = inventory.("Life Potion");
+
+            if (potion != null)
             {
-                this.SetCurrentHp(this.GetCurrentHp() + 20);
-                this.nbLifePotion -= 1;
+                LifePotion lifePotion = (LifePotion)potion;
+                this.SetCurrentHp(Math.Min(this.GetMaxHp(), this.GetCurrentHp() + lifePotion.getLifePointRestored()));
+                inventory.RemoveItem(potion,1);
             }
         }
+        */
     }
 
     class Ennemy : Personnage
     {
-        public Ennemy(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense) : base(CurrentHp, MaxHp, Attack, MaxDefense, CurrentDefense)
+        public Ennemy(int CurrentHp, int MaxHp, int Attack, int Defense, int Shield)
+            : base(CurrentHp, MaxHp, Attack, Defense, Shield)
         {
-
         }
 
         public void attackPlayer(Player player)
         {
-            int damage = this.GetAttackPower() - player.GetCurrentDefense();
+            int damage = this.GetAttackPower() - player.GetShield();
             if (player.GetCurrentHp() - this.GetAttackPower() > 0)
             {
                 player.SetCurrentHp(player.GetCurrentHp() - damage);
@@ -146,5 +170,4 @@ namespace RPG_C_
             }
         }
     }
-
 }

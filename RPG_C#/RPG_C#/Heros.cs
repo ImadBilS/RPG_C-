@@ -11,16 +11,16 @@ namespace RPG_C_
         private int CurrentHp;
         private int MaxHp;
         private int Attack;
-        private int MaxDefense;
-        private int CurrentDefense;
+        private int Defense;
+        private int Shield;
 
-        public Heros(int CurrentHp, int MaxHp, int Attack, int MaxDefense, int CurrentDefense)
+        public Heros(int CurrentHp, int MaxHp, int Attack, int Defense, int Shield)
         {
             this.CurrentHp = CurrentHp;
             this.MaxHp = MaxHp;
             this.Attack = Attack;
-            this.MaxDefense = MaxDefense;
-            this.CurrentDefense = CurrentDefense;
+            this.Defense = Defense;
+            this.Shield = Shield;
         }
 
         public int GetCurrentHp()
@@ -35,13 +35,13 @@ namespace RPG_C_
         {
             return this.Attack;
         }
-        public int GetCurrentDefense()
+        public int GetShield()
         {
-            return this.CurrentDefense;
+            return this.Shield;
         }
-        public int GetMaxDefense()
+        public int GetDefense()
         {
-            return this.MaxDefense;
+            return this.Defense;
         }
         
 
@@ -57,19 +57,19 @@ namespace RPG_C_
         {
             this.Attack = Attack;
         }
-        public void SetCurrentDefense(int CurrentDefense)
+        public void SetShield(int Shield)
         {
-            this.CurrentDefense = CurrentDefense;
+            this.Shield = Shield;
         }
-        public void SetMaxDefense(int MaxDefense)
+        public void SetDefense(int Defense)
         {
-            this.MaxDefense = MaxDefense;
+            this.Defense = Defense;
         }
 
         //Méthodes
         public void attackAMonster(Monster monster)
         {
-            int damage = this.Attack - monster.GetCurrentDefense();
+            int damage = this.Attack - monster.GetShield();
             
             if (monster.GetCurrentHp() - this.Attack > 0)
             {

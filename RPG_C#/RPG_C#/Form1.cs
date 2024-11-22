@@ -11,7 +11,7 @@ namespace RPG_C_
         private string playerAttack = @"img\player\attack.gif";
         private string ennemyFight = @"img\ennemy\king_slime.png";
         //private string playerAttack = @"img\player\fight.gif";
-        private string forestArena = @"img\arena\forest.png";
+        private string forestArena = @"img\arena\land_small.png";
         private string ennemyAttackGif = @"img\effect\ennemy_attack.gif";
         private string playerHitted = @"img\player\hitted.png";
         private string playerHeal = @"img\player\healed.png";
@@ -68,7 +68,7 @@ namespace RPG_C_
             }
 
             // Définir la position et la taille de pictureBox2
-            pictureBox2.Location = new Point(75, 50); // Ajustez selon vos besoins
+            pictureBox2.Location = new Point(150, 50); // Ajustez selon vos besoins
             pictureBox2.Size = new Size(100, 100);    // Ajustez selon vos besoins
 
             // Définir pictureBox2 comme enfant de pbArena
@@ -84,18 +84,30 @@ namespace RPG_C_
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lblPlayerPvMax.Text += " : " + Global.player.GetMaxHp();
-            lblPlayerCurrentPv.Text += " : " + Global.player.GetCurrentHp();
-            lblPlayerMaxDefense.Text += " : " + Global.player.GetMaxDefense();
-            lblPlayerDefense.Text += " : " + Global.player.GetCurrentDefense();
+            lblPlayerPv.Text += " : " + Global.player.GetCurrentHp() + " / " + Global.player.GetMaxHp();
+            lblPlayerDefense.Text = "PlayerDefense : " + Global.player.GetDefense();
+            lblPlayerShield.Text = "PlayerShield. : " + Global.player.GetShield();
             lblPlayerAttack.Text += " : " + Global.player.GetAttackPower();
-            lblPlayerPotion.Text += " : " + Global.player.getNbLifePotion();
 
-            lblEnnemyPvMax.Text += " : " + Global.ennemy.GetMaxHp();
-            lblEnnemyCurrentPv.Text += " : " + Global.ennemy.GetCurrentHp();
-            lblEnnemyMaxDefense.Text += " : " + Global.ennemy.GetMaxDefense();
-            lblEnnemyDefense.Text += " : " + Global.ennemy.GetCurrentDefense();
+            lblEnnemyCurrentPv.Text += " : " + Global.ennemy.GetCurrentHp() + " / " + Global.ennemy.GetMaxHp();
+            lblEnnemyDef.Text = "EnnemyDefense : " + Global.ennemy.GetDefense();
+            lblEnnemyShield.Text = "EnnemyShield : " + Global.ennemy.GetShield();
             lblEnnemyAttack.Text += " : " + Global.ennemy.GetAttackPower();
+
+            btnSmallLifePotion.Image = Image.FromFile(@"img\items\heal_potion_small.png");
+            btnMediumLifePotion.Image = Image.FromFile(@"img\items\heal_potion_medium.png");
+            btnHighLifePotion.Image = Image.FromFile(@"img\items\heal_potion_high.png");
+            btnSword1.Image = Image.FromFile(@"img\items\sword_lvl1.png");
+            btnSword2.Image = Image.FromFile(@"img\items\sword_lvl2.png");
+            btnSword3.Image = Image.FromFile(@"img\items\sword_lvl3.png");
+            btnArmor1.Image = Image.FromFile(@"img\items\armor_lvl1.png");
+            btnArmor2.Image = Image.FromFile(@"img\items\armor_lvl2.png");
+            btnArmor3.Image = Image.FromFile(@"img\items\armor_lvl3.png");
+            btnCocaSmall.Image = Image.FromFile(@"img\items\coca_shield_small.png");
+            btnCocaMedium.Image = Image.FromFile(@"img\items\coca_shield_medium.png");
+            btnCocaBig.Image = Image.FromFile(@"img\items\coca_shield_big.png");
+            btnGourde.Image = Image.FromFile(@"img\items\gourde.png");
+
         }
 
         private void btnPlayerAttack_Click_1(object sender, EventArgs e)
@@ -106,8 +118,8 @@ namespace RPG_C_
             
             lblPlayerCurrentPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
             
-            lblPlayerMaxDefense.Text = "PlayerMaxDefense : " + Global.player.GetMaxDefense();
-            lblPlayerDefense.Text = "PlayerDefense : " + Global.player.GetCurrentDefense();
+            lblPlayerDefense.Text = "PlayerDefense : " + Global.player.GetDefense();
+            lblPlayerDefense.Text = "PlayerDefense : " + Global.player.GetShield();
             lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
             */
 
@@ -116,8 +128,8 @@ namespace RPG_C_
             //lblEnnemyPvMax.Text = "EnnemyPvMax : " + Global.ennemy.GetMaxHp();
             lblEnnemyCurrentPv.Text = "EnnemyCurrentPv : " + Global.ennemy.GetCurrentHp();
             /*
-            lblEnnemyMaxDefense.Text = "EnnemyMaxDefense : " + Global.ennemy.GetMaxDefense();
-            lblEnnemyDefense.Text = "EnnemyDefense : " + Global.ennemy.GetCurrentDefense();
+            lblEnnemyDefense.Text = "EnnemyDefense : " + Global.ennemy.GetDefense();
+            lblEnnemyDefense.Text = "EnnemyDefense : " + Global.ennemy.GetShield();
             lblEnnemyAttack.Text = "EnnemyAttack : " + Global.ennemy.GetAttackPower();
             */
 
@@ -134,17 +146,16 @@ namespace RPG_C_
         {
             Global.ennemy.attackPlayer(Global.player);
 
-            lblPlayerPvMax.Text = "PlayerPvMax : " + Global.player.GetMaxHp();
-            lblPlayerCurrentPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
-            lblPlayerMaxDefense.Text = "PlayerMaxDefense : " + Global.player.GetMaxDefense();
-            lblPlayerDefense.Text = "PlayerDefense : " + Global.player.GetCurrentDefense();
+            lblPlayerPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp() + "/" + Global.player.GetMaxHp();
+            lblPlayerDefense.Text = "PlayerDefense : " + Global.player.GetDefense();
+            lblPlayerShield.Text = "PlayerShield. : " + Global.player.GetShield();
             lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
 
 
-            lblEnnemyPvMax.Text = "EnnemyPvMax : " + Global.ennemy.GetMaxHp();
-            lblEnnemyCurrentPv.Text = "EnnemyCurrentPv : " + Global.ennemy.GetCurrentHp();
-            lblEnnemyMaxDefense.Text = "EnnemyMaxDefense : " + Global.ennemy.GetMaxDefense();
-            lblEnnemyDefense.Text = "EnnemyDefense : " + Global.ennemy.GetCurrentDefense();
+
+            lblEnnemyCurrentPv.Text = "EnnemyCurrentPv : " + Global.ennemy.GetCurrentHp() + "/" + Global.ennemy.GetMaxHp();
+            lblEnnemyDef.Text = "EnnemyDefense : " + Global.ennemy.GetDefense();
+            lblEnnemyShield.Text = "EnnemyShield : " + Global.ennemy.GetShield();
             lblEnnemyAttack.Text = "EnnemyAttack : " + Global.ennemy.GetAttackPower();
             if (Global.player.hasDied())
             {
@@ -170,11 +181,10 @@ namespace RPG_C_
                 }
                 else
                 {
-                    Global.player.heal();
+
                 }
 
-                lblPlayerCurrentPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
-                lblPlayerPotion.Text = "PlayerPotion : " + Global.player.getNbLifePotion();
+                lblPlayerPv.Text = "PlayerCurrentPv : " + Global.player.GetCurrentHp();
 
                 pictureBox1.BackgroundImage = Image.FromFile(playerHeal);
                 pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
@@ -194,12 +204,13 @@ namespace RPG_C_
             MessageBox.Show("You are full life");
         }
 
-            */
+            
             if (Global.player.getNbLifePotion() == 0)
             {
                 btnHealPlayer.Enabled = false;
                 MessageBox.Show("You don't have any more life potion");
             }
+            */
 
 
 
@@ -231,6 +242,25 @@ namespace RPG_C_
         {
             Map laNouvelleFenetreMap = new Map();
             laNouvelleFenetreMap.Show();
+        }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            FormInventoryTest formInventoryTest = new FormInventoryTest();
+            formInventoryTest.Show();
+
+        }
+
+        private void btnSword1_Click(object sender, EventArgs e)
+        {
+            Global.player.equipNewSword(Global.swordLv1);
+            lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
+        }
+
+        private void btnSword2_Click(object sender, EventArgs e)
+        {
+            Global.player.equipNewSword(Global.swordLv2);
+            lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
         }
     }
 }

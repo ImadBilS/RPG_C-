@@ -65,6 +65,15 @@ namespace RPG_C_
         {
             this.lifePointRestored = lifePointRestored;
         }
+
+        public int getLifePointRestored()
+        {
+            return this.lifePointRestored;
+        }
+        public void setLifePointRestored(int lifePointRestored)
+        {
+            this.lifePointRestored = lifePointRestored;
+        }
     }
 
     class CocaShield: Item
@@ -81,12 +90,20 @@ namespace RPG_C_
     {
         private int attackPower;
         private int level;
+        private bool isEquipped;
 
-        public Sword(string name, int quantity, string description, Single dropRate, int attackPower, int level) : base(name, quantity, description, dropRate)
+        public Sword(string name, int quantity, string description, Single dropRate, int attackPower, int level, bool isEquipped) : base(name, quantity, description, dropRate)
         {
             this.attackPower = attackPower;
             this.level = level;
+            this.isEquipped = isEquipped;
         }
+        public int getAttackPower() { return this.attackPower; }
+        public void setAttackPower(int attackPower) { this.attackPower = attackPower; }
+        public int getLevel() { return this.level; }
+        public void setLevel(int level) { this.level = level; }
+        public bool getIsEquipped() { return this.isEquipped; }
+        public void setIsEquipped(bool isEquipped) { this.isEquipped = isEquipped; }
     }
 
     class Armor : Item
@@ -99,6 +116,7 @@ namespace RPG_C_
             this.defensePower = defensePower;
             this.level = level;
         }
+
     }
 
     class HolyPotion : Item
