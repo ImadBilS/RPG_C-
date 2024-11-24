@@ -73,27 +73,28 @@
             // lblPlayerPv
             // 
             lblPlayerPv.AutoSize = true;
-            lblPlayerPv.Location = new Point(12, 68);
+            lblPlayerPv.Location = new Point(10, 51);
             lblPlayerPv.Name = "lblPlayerPv";
-            lblPlayerPv.Size = new Size(64, 20);
+            lblPlayerPv.Size = new Size(52, 15);
             lblPlayerPv.TabIndex = 2;
             lblPlayerPv.Text = "PlayerPv";
             // 
             // lblPlayerAttack
             // 
             lblPlayerAttack.AutoSize = true;
-            lblPlayerAttack.Location = new Point(12, 128);
+            lblPlayerAttack.Location = new Point(10, 96);
             lblPlayerAttack.Name = "lblPlayerAttack";
-            lblPlayerAttack.Size = new Size(91, 20);
+            lblPlayerAttack.Size = new Size(73, 15);
             lblPlayerAttack.TabIndex = 4;
             lblPlayerAttack.Text = "PlayerAttack";
             // 
             // btnEnnemyAttack
             // 
             btnEnnemyAttack.AutoSize = true;
-            btnEnnemyAttack.Location = new Point(738, 223);
+            btnEnnemyAttack.Location = new Point(646, 167);
+            btnEnnemyAttack.Margin = new Padding(3, 2, 3, 2);
             btnEnnemyAttack.Name = "btnEnnemyAttack";
-            btnEnnemyAttack.Size = new Size(94, 33);
+            btnEnnemyAttack.Size = new Size(82, 25);
             btnEnnemyAttack.TabIndex = 15;
             btnEnnemyAttack.Text = "Attack";
             btnEnnemyAttack.UseVisualStyleBackColor = true;
@@ -102,9 +103,10 @@
             // btnPlayerAttack
             // 
             btnPlayerAttack.AutoSize = true;
-            btnPlayerAttack.Location = new Point(109, 223);
+            btnPlayerAttack.Location = new Point(95, 167);
+            btnPlayerAttack.Margin = new Padding(3, 2, 3, 2);
             btnPlayerAttack.Name = "btnPlayerAttack";
-            btnPlayerAttack.Size = new Size(94, 33);
+            btnPlayerAttack.Size = new Size(82, 25);
             btnPlayerAttack.TabIndex = 16;
             btnPlayerAttack.Text = "Attack";
             btnPlayerAttack.UseVisualStyleBackColor = true;
@@ -113,9 +115,10 @@
             // btnHealPlayer
             // 
             btnHealPlayer.AutoSize = true;
-            btnHealPlayer.Location = new Point(109, 269);
+            btnHealPlayer.Location = new Point(95, 202);
+            btnHealPlayer.Margin = new Padding(3, 2, 3, 2);
             btnHealPlayer.Name = "btnHealPlayer";
-            btnHealPlayer.Size = new Size(94, 33);
+            btnHealPlayer.Size = new Size(82, 25);
             btnHealPlayer.TabIndex = 17;
             btnHealPlayer.Text = "Heal";
             btnHealPlayer.UseVisualStyleBackColor = true;
@@ -124,9 +127,10 @@
             // btnHealEnnemy
             // 
             btnHealEnnemy.AutoSize = true;
-            btnHealEnnemy.Location = new Point(738, 269);
+            btnHealEnnemy.Location = new Point(646, 202);
+            btnHealEnnemy.Margin = new Padding(3, 2, 3, 2);
             btnHealEnnemy.Name = "btnHealEnnemy";
-            btnHealEnnemy.Size = new Size(94, 33);
+            btnHealEnnemy.Size = new Size(82, 25);
             btnHealEnnemy.TabIndex = 18;
             btnHealEnnemy.Text = "Heal";
             btnHealEnnemy.UseVisualStyleBackColor = true;
@@ -135,9 +139,10 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(413, 242);
+            pictureBox1.Location = new Point(361, 182);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(85, 116);
+            pictureBox1.Size = new Size(74, 87);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
@@ -151,9 +156,10 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
-            pictureBox2.Location = new Point(381, 108);
+            pictureBox2.Location = new Point(333, 81);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(69, 69);
+            pictureBox2.Size = new Size(60, 52);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 20;
             pictureBox2.TabStop = false;
@@ -161,9 +167,10 @@
             // PbArena
             // 
             PbArena.BackColor = Color.Transparent;
-            PbArena.Location = new Point(263, 31);
+            PbArena.Location = new Point(230, 23);
+            PbArena.Margin = new Padding(3, 2, 3, 2);
             PbArena.Name = "PbArena";
-            PbArena.Size = new Size(384, 160);
+            PbArena.Size = new Size(336, 120);
             PbArena.SizeMode = PictureBoxSizeMode.StretchImage;
             PbArena.TabIndex = 21;
             PbArena.TabStop = false;
@@ -181,18 +188,17 @@
             // lblPlayerPotion
             // 
             lblPlayerPotion.AutoSize = true;
-            lblPlayerPotion.Location = new Point(110, 313);
+            lblPlayerPotion.Location = new Point(96, 235);
             lblPlayerPotion.Name = "lblPlayerPotion";
-            lblPlayerPotion.Size = new Size(91, 20);
+            lblPlayerPotion.Size = new Size(74, 15);
             lblPlayerPotion.TabIndex = 22;
             lblPlayerPotion.Text = "PlayerPotion";
             // 
             // btnMapOpen
             // 
-            btnMapOpen.Location = new Point(797, 380);
-            btnMapOpen.Margin = new Padding(3, 4, 3, 4);
+            btnMapOpen.Location = new Point(697, 285);
             btnMapOpen.Name = "btnMapOpen";
-            btnMapOpen.Size = new Size(82, 55);
+            btnMapOpen.Size = new Size(72, 41);
             btnMapOpen.TabIndex = 23;
             btnMapOpen.Text = "Afficher la map";
             btnMapOpen.UseVisualStyleBackColor = true;
@@ -201,81 +207,90 @@
             // lblItem
             // 
             lblItem.AutoSize = true;
-            lblItem.Location = new Point(12, 447);
+            lblItem.Location = new Point(10, 335);
             lblItem.Name = "lblItem";
-            lblItem.Size = new Size(56, 20);
+            lblItem.Size = new Size(45, 15);
             lblItem.TabIndex = 24;
             lblItem.Text = "Items : ";
             // 
             // btnSmallLifePotion
             // 
             btnSmallLifePotion.AutoSize = true;
-            btnSmallLifePotion.Location = new Point(12, 495);
+            btnSmallLifePotion.Location = new Point(10, 371);
+            btnSmallLifePotion.Margin = new Padding(3, 2, 3, 2);
             btnSmallLifePotion.Name = "btnSmallLifePotion";
-            btnSmallLifePotion.Size = new Size(60, 60);
+            btnSmallLifePotion.Size = new Size(52, 45);
             btnSmallLifePotion.TabIndex = 25;
             btnSmallLifePotion.UseVisualStyleBackColor = true;
             // 
             // btnMediumLifePotion
             // 
             btnMediumLifePotion.AutoSize = true;
-            btnMediumLifePotion.Location = new Point(78, 495);
+            btnMediumLifePotion.Location = new Point(68, 371);
+            btnMediumLifePotion.Margin = new Padding(3, 2, 3, 2);
             btnMediumLifePotion.Name = "btnMediumLifePotion";
-            btnMediumLifePotion.Size = new Size(60, 60);
+            btnMediumLifePotion.Size = new Size(52, 45);
             btnMediumLifePotion.TabIndex = 26;
             btnMediumLifePotion.UseVisualStyleBackColor = true;
             // 
             // btnHighLifePotion
             // 
             btnHighLifePotion.AutoSize = true;
-            btnHighLifePotion.Location = new Point(144, 495);
+            btnHighLifePotion.Location = new Point(126, 371);
+            btnHighLifePotion.Margin = new Padding(3, 2, 3, 2);
             btnHighLifePotion.Name = "btnHighLifePotion";
-            btnHighLifePotion.Size = new Size(60, 60);
+            btnHighLifePotion.Size = new Size(52, 45);
             btnHighLifePotion.TabIndex = 27;
             btnHighLifePotion.UseVisualStyleBackColor = true;
             // 
             // btnCocaBig
             // 
             btnCocaBig.AutoSize = true;
-            btnCocaBig.Location = new Point(144, 561);
+            btnCocaBig.Location = new Point(126, 421);
+            btnCocaBig.Margin = new Padding(3, 2, 3, 2);
             btnCocaBig.Name = "btnCocaBig";
-            btnCocaBig.Size = new Size(60, 60);
+            btnCocaBig.Size = new Size(52, 45);
             btnCocaBig.TabIndex = 30;
             btnCocaBig.UseVisualStyleBackColor = true;
             // 
             // btnCocaMedium
             // 
             btnCocaMedium.AutoSize = true;
-            btnCocaMedium.Location = new Point(78, 561);
+            btnCocaMedium.Location = new Point(68, 421);
+            btnCocaMedium.Margin = new Padding(3, 2, 3, 2);
             btnCocaMedium.Name = "btnCocaMedium";
-            btnCocaMedium.Size = new Size(60, 60);
+            btnCocaMedium.Size = new Size(52, 45);
             btnCocaMedium.TabIndex = 29;
             btnCocaMedium.UseVisualStyleBackColor = true;
             // 
             // btnCocaSmall
             // 
             btnCocaSmall.AutoSize = true;
-            btnCocaSmall.Location = new Point(12, 561);
+            btnCocaSmall.Location = new Point(10, 421);
+            btnCocaSmall.Margin = new Padding(3, 2, 3, 2);
             btnCocaSmall.Name = "btnCocaSmall";
-            btnCocaSmall.Size = new Size(60, 60);
+            btnCocaSmall.Size = new Size(52, 45);
             btnCocaSmall.TabIndex = 28;
             btnCocaSmall.UseVisualStyleBackColor = true;
             // 
             // btnSword3
             // 
             btnSword3.AutoSize = true;
-            btnSword3.Location = new Point(834, 495);
+            btnSword3.Location = new Point(730, 371);
+            btnSword3.Margin = new Padding(3, 2, 3, 2);
             btnSword3.Name = "btnSword3";
-            btnSword3.Size = new Size(60, 60);
+            btnSword3.Size = new Size(52, 45);
             btnSword3.TabIndex = 33;
             btnSword3.UseVisualStyleBackColor = true;
+            btnSword3.Click += btnSword3_Click;
             // 
             // btnSword2
             // 
             btnSword2.AutoSize = true;
-            btnSword2.Location = new Point(768, 495);
+            btnSword2.Location = new Point(672, 371);
+            btnSword2.Margin = new Padding(3, 2, 3, 2);
             btnSword2.Name = "btnSword2";
-            btnSword2.Size = new Size(60, 60);
+            btnSword2.Size = new Size(52, 45);
             btnSword2.TabIndex = 32;
             btnSword2.UseVisualStyleBackColor = true;
             btnSword2.Click += btnSword2_Click;
@@ -283,9 +298,10 @@
             // btnSword1
             // 
             btnSword1.AutoSize = true;
-            btnSword1.Location = new Point(702, 495);
+            btnSword1.Location = new Point(614, 371);
+            btnSword1.Margin = new Padding(3, 2, 3, 2);
             btnSword1.Name = "btnSword1";
-            btnSword1.Size = new Size(60, 60);
+            btnSword1.Size = new Size(52, 45);
             btnSword1.TabIndex = 31;
             btnSword1.UseVisualStyleBackColor = true;
             btnSword1.Click += btnSword1_Click;
@@ -293,45 +309,50 @@
             // btnArmor3
             // 
             btnArmor3.AutoSize = true;
-            btnArmor3.Location = new Point(834, 561);
+            btnArmor3.Location = new Point(730, 421);
+            btnArmor3.Margin = new Padding(3, 2, 3, 2);
             btnArmor3.Name = "btnArmor3";
-            btnArmor3.Size = new Size(60, 60);
+            btnArmor3.Size = new Size(52, 45);
             btnArmor3.TabIndex = 36;
             btnArmor3.UseVisualStyleBackColor = true;
             // 
             // btnArmor2
             // 
             btnArmor2.AutoSize = true;
-            btnArmor2.Location = new Point(768, 561);
+            btnArmor2.Location = new Point(672, 421);
+            btnArmor2.Margin = new Padding(3, 2, 3, 2);
             btnArmor2.Name = "btnArmor2";
-            btnArmor2.Size = new Size(60, 60);
+            btnArmor2.Size = new Size(52, 45);
             btnArmor2.TabIndex = 35;
             btnArmor2.UseVisualStyleBackColor = true;
             // 
             // btnArmor1
             // 
             btnArmor1.AutoSize = true;
-            btnArmor1.Location = new Point(702, 561);
+            btnArmor1.Location = new Point(614, 421);
+            btnArmor1.Margin = new Padding(3, 2, 3, 2);
             btnArmor1.Name = "btnArmor1";
-            btnArmor1.Size = new Size(60, 60);
+            btnArmor1.Size = new Size(52, 45);
             btnArmor1.TabIndex = 34;
             btnArmor1.UseVisualStyleBackColor = true;
             // 
             // btnGourde
             // 
             btnGourde.AutoSize = true;
-            btnGourde.Location = new Point(210, 561);
+            btnGourde.Location = new Point(184, 421);
+            btnGourde.Margin = new Padding(3, 2, 3, 2);
             btnGourde.Name = "btnGourde";
-            btnGourde.Size = new Size(60, 60);
+            btnGourde.Size = new Size(52, 45);
             btnGourde.TabIndex = 37;
             btnGourde.UseVisualStyleBackColor = true;
             // 
             // btnInventory
             // 
             btnInventory.AutoSize = true;
-            btnInventory.Location = new Point(701, 375);
+            btnInventory.Location = new Point(613, 281);
+            btnInventory.Margin = new Padding(3, 2, 3, 2);
             btnInventory.Name = "btnInventory";
-            btnInventory.Size = new Size(84, 60);
+            btnInventory.Size = new Size(74, 45);
             btnInventory.TabIndex = 38;
             btnInventory.Text = "Inventaire";
             btnInventory.UseVisualStyleBackColor = true;
@@ -340,45 +361,45 @@
             // lblPlayerDefense
             // 
             lblPlayerDefense.AutoSize = true;
-            lblPlayerDefense.Location = new Point(12, 88);
+            lblPlayerDefense.Location = new Point(10, 66);
             lblPlayerDefense.Name = "lblPlayerDefense";
-            lblPlayerDefense.Size = new Size(103, 20);
+            lblPlayerDefense.Size = new Size(81, 15);
             lblPlayerDefense.TabIndex = 39;
             lblPlayerDefense.Text = "PlayerDefense";
             // 
             // lblPlayerShield
             // 
             lblPlayerShield.AutoSize = true;
-            lblPlayerShield.Location = new Point(12, 108);
+            lblPlayerShield.Location = new Point(10, 81);
             lblPlayerShield.Name = "lblPlayerShield";
-            lblPlayerShield.Size = new Size(90, 20);
+            lblPlayerShield.Size = new Size(71, 15);
             lblPlayerShield.TabIndex = 40;
             lblPlayerShield.Text = "PlayerShield";
             // 
             // lblEnnemyShield
             // 
             lblEnnemyShield.AutoSize = true;
-            lblEnnemyShield.Location = new Point(701, 108);
+            lblEnnemyShield.Location = new Point(613, 81);
             lblEnnemyShield.Name = "lblEnnemyShield";
-            lblEnnemyShield.Size = new Size(102, 20);
+            lblEnnemyShield.Size = new Size(82, 15);
             lblEnnemyShield.TabIndex = 44;
             lblEnnemyShield.Text = "EnnemyShield";
             // 
             // lblEnnemyAttack
             // 
             lblEnnemyAttack.AutoSize = true;
-            lblEnnemyAttack.Location = new Point(701, 128);
+            lblEnnemyAttack.Location = new Point(613, 96);
             lblEnnemyAttack.Name = "lblEnnemyAttack";
-            lblEnnemyAttack.Size = new Size(103, 20);
+            lblEnnemyAttack.Size = new Size(84, 15);
             lblEnnemyAttack.TabIndex = 42;
             lblEnnemyAttack.Text = "EnnemyAttack";
             // 
             // lblEnnemyCurrentPv
             // 
             lblEnnemyCurrentPv.AutoSize = true;
-            lblEnnemyCurrentPv.Location = new Point(701, 68);
+            lblEnnemyCurrentPv.Location = new Point(613, 51);
             lblEnnemyCurrentPv.Name = "lblEnnemyCurrentPv";
-            lblEnnemyCurrentPv.Size = new Size(78, 20);
+            lblEnnemyCurrentPv.Size = new Size(64, 15);
             lblEnnemyCurrentPv.TabIndex = 41;
             lblEnnemyCurrentPv.Text = "EnnemyPV";
             // 
@@ -386,23 +407,23 @@
             // 
             lblEnnemyDefense.Location = new Point(0, 0);
             lblEnnemyDefense.Name = "lblEnnemyDefense";
-            lblEnnemyDefense.Size = new Size(100, 23);
+            lblEnnemyDefense.Size = new Size(88, 17);
             lblEnnemyDefense.TabIndex = 0;
             // 
             // lblEnnemyDef
             // 
             lblEnnemyDef.AutoSize = true;
-            lblEnnemyDef.Location = new Point(702, 88);
+            lblEnnemyDef.Location = new Point(614, 66);
             lblEnnemyDef.Name = "lblEnnemyDef";
-            lblEnnemyDef.Size = new Size(115, 20);
+            lblEnnemyDef.Size = new Size(92, 15);
             lblEnnemyDef.TabIndex = 45;
             lblEnnemyDef.Text = "EnnemyDefense";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(910, 702);
+            ClientSize = new Size(796, 526);
             Controls.Add(lblEnnemyDef);
             Controls.Add(lblEnnemyDefense);
             Controls.Add(lblEnnemyShield);
@@ -436,6 +457,7 @@
             Controls.Add(btnEnnemyAttack);
             Controls.Add(lblPlayerAttack);
             Controls.Add(lblPlayerPv);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

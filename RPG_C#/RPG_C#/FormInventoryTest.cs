@@ -32,13 +32,17 @@ namespace RPG_C_
             // Ajouter des colonnes si ce n'est pas déjà fait
             listView1.Columns.Add("Nom", 100);
             listView1.Columns.Add("Quantité", 100);
-            listView1.Columns.Add("Description", 200);
+            listView1.Columns.Add("Description", 250);
             listView1.Columns.Add("Taux de Drop", 100);
+            listView1.Columns.Add("TYPE", 200);
+
 
             // Parcours des objets dans Global.PlayerItems et ajout à la ListView
-            foreach (Item item in Global.PlayerItems)
-            {
-                ListViewItem listViewItem = new ListViewItem(item.GetName());
+            //foreach (Item item in Global.PlayerItems)
+            /*
+            foreach (Item item in Global.playerItemsDictionary)
+                {
+                    ListViewItem listViewItem = new ListViewItem(item.GetName());
                 listViewItem.SubItems.Add(item.GetQuantity().ToString());
                 listViewItem.SubItems.Add(item.GetDescription());
                 listViewItem.SubItems.Add(item.GetDropRate().ToString());
@@ -46,6 +50,23 @@ namespace RPG_C_
                 // Ajout de l'élément à la ListView
                 listView1.Items.Add(listViewItem);
             }
+            */
+
+            foreach (KeyValuePair<string, Item> kvp in Global.playerItemsDictionary)
+            {
+                Item item = kvp.Value;
+
+                ListViewItem listViewItem = new ListViewItem(item.GetName());
+                listViewItem.SubItems.Add(item.GetQuantity().ToString());
+                listViewItem.SubItems.Add(item.GetDescription());
+                listViewItem.SubItems.Add(item.GetDropRate().ToString());
+                listViewItem.SubItems.Add(item.GetType().ToString());
+
+
+                // Ajout de l'élément à la ListView
+                listView1.Items.Add(listViewItem);
+            }
+
             /*
             
             // Chemin du fichier CSV

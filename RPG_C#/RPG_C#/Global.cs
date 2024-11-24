@@ -20,8 +20,11 @@ namespace RPG_C_
         public static int randomAttack = rnd.Next(15, 25);
         public static int randomDefense = rnd.Next(10, 15);
         public static Ennemy ennemy = new Ennemy(randomHp, randomHp, randomAttack, randomDefense, randomDefense);
-        public static Sword swordLv1 = new Sword("Iron Sword", 1, "A basic iron sword.", 0.40f, 10, 1, true);
+        //public static Sword swordLv1 = new Sword("Iron Sword", 1, "A basic iron sword.", 0.40f, 10, 1, true);
         public static Sword swordLv2 = new Sword("Steel Sword", 1, "A sturdy steel sword.", 0.40f, 25, 1, false);
+        public static Sword swordLv3 = new Sword("Zixel Sword", 1, "The legendary sword of Queen Pitois.", 0.40f, 50, 1, false);
+   
+
         //public static List<Item> PlayerItems = new List<Item>();
         // Liste globale d'items
         public static List<Item> PlayerItems = new List<Item>
@@ -31,10 +34,25 @@ namespace RPG_C_
             new CocaShield("Small Coca-Shield", 3, "Restores 15 Shield Points.", 0.60f, 15),
             new Sword("Iron Sword", 1, "A basic iron sword.", 0.40f, 10, 1,true),
             new Sword("Steel Sword", 1, "A sturdy steel sword.", 0.25f, 20, 2,false),
+            new Sword("Zixel Sword", 1, "The legendary sword of Queen Pitois.", 0.10f, 50, 3,false),
             new Armor("Leather Armor", 1, "Simple leather armor.", 0.70f, 5, 1),
             new Armor("Chainmail Armor", 1, "Armor made of interlocking metal rings.", 0.30f, 15, 2),
             new HolyPotion("Holy Potion", 1, "Restores 50 HP and 25 Shield Points.", 0.20f, 500, 500)
         };
+
+        public static Dictionary<string, Item> playerItemsDictionary = new Dictionary<string, Item>
+        {
+            { "Small Life Potion", new LifePotion("Small Life Potion", 5, "Restores 20 HP.", 0.75f, 20) },
+            { "Large Life Potion", new LifePotion("Large Life Potion", 2, "Restores 100 HP.", 0.50f, 100) },
+            { "Small Coca-Shield", new CocaShield("Small Coca-Shield", 3, "Restores 15 Shield Points.", 0.60f, 15) },
+            { "swordLv1", new Sword("Iron Sword", 1, "A basic iron sword.", 0.40f, 11, 1, true) },
+            { "Steel Sword", new Sword("Steel Sword", 1, "A sturdy steel sword.", 0.25f, 20, 2, false) },
+            { "Zixel Sword", new Sword("Zixel Sword", 1, "The legendary sword of Queen Pitois.", 0.10f, 50, 3, false) },
+            { "Leather Armor", new Armor("Leather Armor", 1, "Simple leather armor.", 0.70f, 5, 1) },
+            { "Chainmail Armor", new Armor("Chainmail Armor", 1, "Armor made of interlocking metal rings.", 0.30f, 15, 2) },
+            { "Holy Potion", new HolyPotion("Holy Potion", 1, "Restores 50 HP and 25 Shield Points.", 0.20f, 500, 500) }
+        };
+        public static Sword swordLv1 = playerItemsDictionary["swordLv1"] as Sword;
         public static Player player = new Player(90, 100, 20, 13, 12, swordLv1, PlayerItems);
 
 

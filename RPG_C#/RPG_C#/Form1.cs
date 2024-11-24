@@ -108,6 +108,10 @@ namespace RPG_C_
             btnCocaBig.Image = Image.FromFile(@"img\items\coca_shield_big.png");
             btnGourde.Image = Image.FromFile(@"img\items\gourde.png");
 
+            btnSword1.Enabled = !Global.swordLv1.getIsEquipped();
+            btnSword2.Enabled = !Global.swordLv2.getIsEquipped();
+            //btnSword3.Enabled = !Global.swordLv3.getIsEquipped();
+
         }
 
         private void btnPlayerAttack_Click_1(object sender, EventArgs e)
@@ -255,12 +259,32 @@ namespace RPG_C_
         {
             Global.player.equipNewSword(Global.swordLv1);
             lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
+            Global.swordLv1.setIsEquipped(true);
+            btnSword1.Enabled = false;
+            btnSword2.Enabled = true;
+            btnSword3.Enabled = true;
+
         }
 
         private void btnSword2_Click(object sender, EventArgs e)
         {
             Global.player.equipNewSword(Global.swordLv2);
             lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
+            Global.swordLv2.setIsEquipped(true);
+            btnSword2.Enabled = false;
+            btnSword1.Enabled = true;
+            btnSword3.Enabled = true;
+        }
+
+        private void btnSword3_Click(object sender, EventArgs e)
+        {
+            Global.player.equipNewSword(Global.swordLv3);
+            lblPlayerAttack.Text = "PlayerAttack : " + Global.player.GetAttackPower();
+            Global.swordLv2.setIsEquipped(true);
+            btnSword3.Enabled = false;
+            btnSword1.Enabled = true;
+            btnSword2.Enabled = true;
+
         }
     }
 }

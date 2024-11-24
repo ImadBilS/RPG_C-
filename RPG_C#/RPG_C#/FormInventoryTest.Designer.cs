@@ -33,18 +33,20 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(60, 31);
+            listView1.Location = new Point(52, 23);
+            listView1.Margin = new Padding(3, 2, 3, 2);
             listView1.Name = "listView1";
-            listView1.Size = new Size(677, 329);
+            listView1.Size = new Size(909, 248);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
             // FormInventoryTest
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1030, 444);
             Controls.Add(listView1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormInventoryTest";
             Text = "FormInventoryTest";
             Load += FormInventoryTest_Load;
