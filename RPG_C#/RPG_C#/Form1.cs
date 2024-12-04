@@ -245,7 +245,7 @@ namespace RPG_C_
         private void btnMapOpen_Click(object sender, EventArgs e)
         {
             Map laNouvelleFenetreMap = new Map();
-            laNouvelleFenetreMap.Show();
+            laNouvelleFenetreMap.ShowDialog();
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
